@@ -1,133 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EarnQube.site - Earn Money Online | Chat, Watch Videos & More</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VisualSite - Earn Money Online | Chat, Watch Videos & More</title>
+    <meta name="description" content="Join VisualSite and start earning real money from home. Chat, watch videos, play quizzes, and get paid instantly." />
+    <meta name="keywords" content="earn money online, chat earn, watch videos, online gigs, work from home" />
+    <meta name="author" content="VisualSite" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-p1CmO0p6O4R1Qy4K4OMj3A2O9s7g5j/HuM1eR2VUqTkQyQ8cS+qmqxO7kVujK7H4C1M6q1A8/6KzHkmK7P4Cvg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
       :root {
-        --bg: #081723;
-        --surface: rgba(18, 41, 70, 0.85);
-        --surface-soft: rgba(28, 63, 108, 0.45);
+        --bg: #020617;
+        --surface: rgba(10, 24, 44, 0.9);
+        --surface-soft: rgba(10, 24, 44, 0.65);
         --text: #eef3f8;
         --muted: #9fb8d4;
-        --accent: #f2ca6c;
-        --accent-strong: #28c9ff;
-        --button: linear-gradient(135deg, #22d3ee, #0f7cff);
-        --shadow: 0 32px 90px rgba(8, 20, 44, 0.35);
+        --accent: #00d4ff;
+        --accent-dark: #0a83cd;
+        --button: linear-gradient(135deg, #00d4ff, #0077d9);
+        --shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
       }
-      * { box-sizing: border-box; }
-      html, body { margin: 0; min-height: 100%; }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
       body {
         font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         color: var(--text);
-        background: radial-gradient(circle at top left, rgba(40, 201, 255, 0.16), transparent 20%), radial-gradient(circle at bottom right, rgba(242, 202, 108, 0.12), transparent 18%), linear-gradient(180deg, #071523 0%, #04111f 100%);
+        background: radial-gradient(circle at top left, rgba(0, 212, 255, 0.12), transparent 22%),
+          radial-gradient(circle at bottom right, rgba(0, 123, 255, 0.12), transparent 20%),
+          linear-gradient(180deg, #020617 0%, #061229 100%);
+        overflow-x: hidden;
       }
-      .page { max-width: 1180px; margin: 0 auto; padding: 32px 24px 48px; }
-      .site-header { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 10px 0 22px; flex-wrap: wrap; position: relative; }
-      .logo { font-size: 1.05rem; font-weight: 800; letter-spacing: 0.35em; color: white; text-decoration: none; text-transform: uppercase; }
-      .nav-links { display: flex; gap: 20px; flex-wrap: wrap; align-items: center; transition: max-height 240ms ease, opacity 240ms ease; }
-      .nav-links a { color: #cbd7ea; text-decoration: none; font-weight: 600; transition: color 180ms ease; }
-      .nav-links a:hover { color: white; }
-      .nav-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-      .menu-toggle { display: none; border: none; background: rgba(255, 255, 255, 0.08); color: #eef3f8; width: 48px; height: 48px; border-radius: 18px; cursor: pointer; align-items: center; justify-content: center; font-size: 1.1rem; transition: transform 180ms ease, background 180ms ease; }
-      .menu-toggle:hover { transform: translateY(-1px); background: rgba(255, 255, 255, 0.12); }
-      .btn { display: inline-flex; align-items: center; justify-content: center; border: none; border-radius: 999px; cursor: pointer; transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease; text-decoration: none; color: inherit; font-weight: 700; white-space: nowrap; }
-      .btn-primary { background: var(--button); color: #fff; padding: 14px 28px; box-shadow: 0 20px 55px rgba(12, 84, 180, 0.22); }
-      .btn-secondary { background: rgba(255, 255, 255, 0.08); color: var(--text); padding: 14px 24px; border: 1px solid rgba(255, 255, 255, 0.12); }
-      .btn:hover { transform: translateY(-2px); }
-      .hero { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: center; padding: 42px 0 20px; }
-      .hero-copy small { display: inline-flex; padding: 10px 16px; border-radius: 999px; background: rgba(40, 201, 255, 0.12); color: var(--accent-strong); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 22px; }
-      .hero-copy h1 { font-size: clamp(2.25rem, 4vw, 4.2rem); line-height: 1.03; margin: 0 0 22px; max-width: 680px; }
-      .hero-copy p { color: var(--muted); max-width: 640px; line-height: 1.8; margin: 0 0 28px; font-size: 1rem; }
-      .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
-      .hero-visual { position: relative; min-height: 360px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 32px; padding: 28px; box-shadow: var(--shadow); overflow: hidden; }
-      .hero-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(40, 201, 255, 0.18), transparent 28%), radial-gradient(circle at bottom left, rgba(242, 202, 108, 0.14), transparent 26%); pointer-events: none; }
-      .hero-card { position: relative; z-index: 1; display: grid; gap: 18px; color: white; }
-      .hero-card h2 { margin: 0; font-size: 1.5rem; }
-      .hero-card p { margin: 0; color: var(--muted); line-height: 1.7; }
-      .feature-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
-      .feature-card { padding: 18px 20px; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 22px; }
-      .feature-card h3 { margin: 0 0 10px; font-size: 1rem; }
-      .feature-card p { margin: 0; color: var(--muted); line-height: 1.7; font-size: 0.94rem; }
-      .section { padding: 42px 0 0; }
-      .section h2 { margin: 0 0 24px; font-size: 2rem; }
-      .section p { color: var(--muted); line-height: 1.8; max-width: 760px; }
-      .site-footer { padding: 28px 0 0; color: #7f9bb3; font-size: 0.94rem; border-top: 1px solid rgba(255, 255, 255, 0.08); }
-      @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } .nav-links { width: 100%; justify-content: center; } .menu-toggle { display: inline-flex; } }
-      @media (max-width: 640px) { .page { padding: 24px 18px 36px; } .hero-copy h1 { font-size: 2.6rem; } .feature-grid { grid-template-columns: 1fr; } }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .page {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 28px 24px 48px;
+      }
+
+      .site-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+        padding: 18px 0 24px;
+      }
+
+      .logo {
+        font-size: 1.05rem;
+        font-weight: 800;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .nav-links a {
+        color: #cbd7ea;
+        font-weight: 600;
+        transition: color 180ms ease;
+      }
+
+      .nav-links a:hover {
+        color: white;
+      }
+
+      .nav-actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .btn,
+      .btn-outline {
+        border-radius: 999px;
+        padding: 14px 26px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      }
+
+      .btn {
+        background: var(--button);
+        color: white;
+        box-shadow: 0 22px 60px rgba(0, 116, 255, 0.2);
+      }
+
+      .btn-outline {
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .btn:hover,
+      .btn-outline:hover {
+        transform: translateY(-2px);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 32px;
+        align-items: center;
+        padding: 40px 0 28px;
+      }
+
+      .hero-copy small {
+        display: inline-flex;
+        padding: 11px 18px;
+        border-radius: 999px;
+        background: rgba(0, 212, 255, 0.12);
+        color: var(--accent);
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        margin-bottom: 24px;
+      }
+
+      .hero-copy h1 {
+        margin: 0;
+        font-size: clamp(2.7rem, 5vw, 4.8rem);
+        line-height: 1.02;
+      }
+
+      .hero-copy p {
+        margin: 24px 0 32px;
+        max-width: 640px;
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 1rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .hero-visual {
+        position: relative;
+        padding: 32px;
+        border-radius: 36px;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        min-height: 420px;
+      }
+
+      .hero-visual::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top right, rgba(0, 212, 255, 0.16), transparent 28%),
+          radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.08), transparent 28%);
+        pointer-events: none;
+      }
+
+      .hero-card {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        gap: 18px;
+      }
+
+      .hero-card h2 {
+        margin: 0;
+        font-size: 1.5rem;
+      }
+
+      .hero-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 26px;
+      }
+
+      .feature-card {
+        padding: 18px 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+      }
+
+      .feature-card h3 {
+        margin: 0 0 10px;
+        font-size: 1rem;
+      }
+
+      .feature-card p {
+        margin: 0;
+        line-height: 1.7;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .section {
+        padding: 44px 0 0;
+      }
+
+      .section h2 {
+        margin: 0 0 24px;
+        font-size: 2rem;
+      }
+
+      .section p {
+        max-width: 760px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+
+      .contact-strip {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 32px;
+      }
+
+      .contact-card {
+        padding: 24px;
+        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .contact-card h3 {
+        margin: 0 0 10px;
+        font-size: 1rem;
+      }
+
+      .contact-card a {
+        display: inline-block;
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .site-footer {
+        margin-top: 44px;
+        padding-top: 28px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        color: #7f9bb3;
+        font-size: 0.95rem;
+        text-align: center;
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        .contact-strip {
+          grid-template-columns: 1fr;
+      }
+
+      @media (max-width: 640px) {
+        .page {
+          padding: 22px 18px 38px;
+        }
+
+        .hero-copy h1 {
+          font-size: 2.85rem;
+        }
+
+        .nav-links {
+          justify-content: center;
+          width: 100%;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="page">
       <header class="site-header">
-        <a class="logo" href="#">EarnQube</a>
+        <a class="logo" href="/">VISUALSITE</a>
         <nav class="nav-links" aria-label="Primary navigation">
-          <a href="#how">How it works</a>
-          <a href="#earn">Earn</a>
+          <a href="/">Home</a>
+          <a href="#about">About</a>
+          <a href="#features">Feature</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="nav-actions">
-          <a class="btn btn-secondary" href="#learn">Learn More</a>
-          <a class="btn btn-primary" href="#join">Start Earning</a>
-          <button class="menu-toggle" aria-label="Toggle navigation menu"><i class="fa fa-bars"></i></button>
+          <a class="btn-outline" href="https://mulaprime.com/user/login.php?ref=Bridan">Sign In</a>
+          <a class="btn" href="https://mulaprime.com/user/register.php?ref=Bridan">Sign Up</a>
         </div>
       </header>
+
       <section class="hero">
         <div class="hero-copy">
-          <small>Earn with chat, videos, tasks, and rewards</small>
-          <h1>Get paid for the things you already enjoy online.</h1>
-          <p>EarnQube makes it easy to chat, watch videos, complete simple tasks, and earn rewards daily. Your next payout is just a few clicks away.</p>
+          <small>START EARNING ONLINE TODAY</small>
+          <h1>Join VisualSite and start earning from home with fast online tasks.</h1>
+          <p>Earn with chat, watch videos, play trivia, and complete simple online tasks. Withdraw instantly and stay connected with WhatsApp and email support.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#join">Join Now</a>
-            <a class="btn btn-secondary" href="#learn">Explore Features</a>
+            <a class="btn" href="https://mulaprime.com/user/register.php?ref=Bridan" target="_blank" rel="noopener">Register Now</a>
+            <a class="btn-outline" href="/contact">Contact</a>
           </div>
         </div>
+
         <div class="hero-visual" aria-hidden="true">
           <div class="hero-card">
-            <h2>Welcome to EarnQube</h2>
-            <p>Track your activity and cash rewards in one place with a secure, modern dashboard built for today’s creators and viewers.</p>
+            <h2>Welcome to VisualSite</h2>
+            <p>Fast payouts, flexible tasks, and a polished earning experience designed for users who want real online income.</p>
             <div class="feature-grid">
               <div class="feature-card">
-                <h3>Watch to earn</h3>
-                <p>Watch curated videos and earn tokens automatically.</p>
+                <h3>Chat Earnings</h3>
+                <p>Get paid to chat with people worldwide and earn more with referrals.</p>
               </div>
               <div class="feature-card">
-                <h3>Chat and connect</h3>
-                <p>Join conversations, unlock bonuses, and get paid for your time.</p>
+                <h3>Video Rewards</h3>
+                <p>Watch videos, complete actions, and earn fast rewards every day.</p>
               </div>
               <div class="feature-card">
-                <h3>Daily rewards</h3>
-                <p>Complete tasks and claim daily bonuses on your schedule.</p>
+                <h3>Trivia Bonuses</h3>
+                <p>Answer fun quizzes and unlock streak rewards.</p>
               </div>
               <div class="feature-card">
-                <h3>Instant access</h3>
-                <p>Sign up quickly and start earning right away.</p>
+                <h3>Instant Access</h3>
+                <p>Sign up quickly and start earning from your first session.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section id="how" class="section">
-        <h2>How EarnQube Works</h2>
-        <p>Join the platform, pick activities you enjoy, and start earning points that convert into cash, gift cards, or other perks. It’s built to reward your everyday online habits.</p>
+
+      <section id="about" class="section">
+        <h2>EARN MONEY WITH VISUALSITE</h2>
+        <p>Explore new ways to earn online through chat, video tasks, trivia games, and app downloads. The platform is simple, flexible, and built for fast payout experiences.</p>
       </section>
+
+      <section id="features" class="section">
+        <div class="contact-strip">
+          <div class="contact-card">
+            <h3>Sign Up</h3>
+            <a href="https://mulaprime.com/user/register.php?ref=Bridan" target="_blank" rel="noopener">Create your account</a>
+          </div>
+          <div class="contact-card">
+            <h3>Sign In</h3>
+            <a href="https://mulaprime.com/user/login.php?ref=Bridan" target="_blank" rel="noopener">Access your dashboard</a>
+          </div>
+          <div class="contact-card">
+            <h3>Contact</h3>
+            <a href="mailto:earnqubesite@gmmail.com">earnqubesite@gmmail.com</a><br />
+            <a href="https://wa.me/256740262269">+256 740 262269</a>
+          </div>
+        </div>
+      </section>
+
       <footer class="site-footer" id="contact">
-        <p>EarnQube.site · Connect, watch, and earn more from the web.</p>
+        <p>&copy; 2026 VisualSite. Reach us at <a href="mailto:info@visualsite.net">info@visualsite.net</a> or <a href="https://wa.me/whatsappphonenumber">WhatsApp</a>.</p>
       </footer>
     </div>
-    <script>
-      const menuToggle = document.querySelector('.menu-toggle');
-      const navLinks = document.querySelector('.nav-links');
-      if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-          navLinks.classList.toggle('open');
-        });
-      }
-    </script>
   </body>
 </html>
