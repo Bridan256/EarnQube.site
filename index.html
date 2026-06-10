@@ -4,71 +4,80 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EarnQube.site - Earn Money Online | Chat, Watch Videos & More</title>
-    <meta name="description" content="EarnQube.site helps you earn money online by chatting, watching videos, completing tasks, and sharing rewards. Join now with your referral link." />
-    <meta name="keywords" content="earn money online, chat earn, watch videos, rewards, work from home, EarnQube.site" />
+    <title>EarnQube.site — Professional online earnings platform</title>
+    <meta name="description" content="EarnQube.site helps you earn money online with chat, video rewards, tasks, referrals and fast support. Join now and the site will guide you every step of the way." />
+    <meta name="keywords" content="earn money online, chat earn, watch videos, referral rewards, tasks, payout, EarnQube.site" />
     <meta name="author" content="EarnQube.site" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-p1CmO0NQjG2hGUF0tZOeP7XrYbSTG2vl9ZC8Vv+mQWZ9Blf0wX3sGsLWYxZRRNLajk2+eNTDnT9PL1PbCM1jXQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
       :root {
         color-scheme: dark light;
         font-family: 'Poppins', sans-serif;
-        line-height: 1.6;
+        background: #050c16;
+        color: #eef4ff;
+        text-rendering: optimizeLegibility;
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
-        background: #050c16;
-        color: #edf2f7;
         min-height: 100vh;
+        background: radial-gradient(circle at top left, rgba(56, 149, 255, 0.18), transparent 26%),
+                    radial-gradient(circle at bottom right, rgba(34, 255, 165, 0.16), transparent 30%),
+                    #050c16;
       }
-      a { color: #47c9ff; text-decoration: none; }
-      a:hover { text-decoration: underline; }
-      .page { max-width: 1180px; margin: 0 auto; padding: 24px; }
-      .header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-      .brand { font-size: 1.4rem; letter-spacing: .03em; font-weight: 700; }
-      .nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
-      .nav a { font-weight: 500; color: #dbe9fb; }
-      .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 36px; align-items: center; padding: 64px 0 40px; }
-      .hero-title { font-size: clamp(2.8rem, 4vw, 4.8rem); margin: 0; line-height: 1.02; }
-      .hero-text { max-width: 680px; margin: 24px 0 32px; color: #c9d6e7; }
-      .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
-      .button { display: inline-flex; align-items: center; justify-content: center; padding: 16px 26px; border-radius: 999px; font-weight: 700; transition: transform .15s ease, box-shadow .15s ease; }
-      .button-primary { background: linear-gradient(135deg, #2ed8ff 0%, #0069ff 100%); color: #080f1a; }
-      .button-secondary { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); color: #fff; }
-      .button:hover { transform: translateY(-1px); }
-      .hero-image { width: 100%; border-radius: 26px; overflow: hidden; box-shadow: 0 32px 80px rgba(0,0,0,.25); }
-      .hero-image img { width: 100%; height: auto; display: block; }
-      .features { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 20px; margin-top: 28px; }
-      .feature-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); border-radius: 24px; padding: 28px; min-height: 220px; }
-      .feature-card h3 { margin-top: 0; font-size: 1.2rem; }
-      .feature-card p { color: #c9d6e7; }
-      .section { padding: 64px 0; }
-      .section-headline { text-align: center; margin-bottom: 32px; }
-      .section-headline h2 { margin: 0; font-size: clamp(2rem, 3vw, 2.6rem); }
-      .section-headline p { margin: 12px auto 0; max-width: 720px; color: #c9d6e7; }
-      .money-screenshots { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 18px; }
-      .money-screenshots img { width: 100%; height: auto; border-radius: 18px; object-fit: cover; border: 1px solid rgba(255,255,255,.12); }
-      .contact-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.08); border-radius: 28px; padding: 32px; display: grid; gap: 18px; }
-      .contact-row { display: flex; align-items: center; gap: 14px; }
-      .contact-row strong { width: 120px; color: #fff; }
-      .footer { padding: 24px 0 16px; text-align: center; color: #8da4bf; font-size: .95rem; }
-      .value-grid { display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); gap: 20px; }
-      .value-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 24px; padding: 24px; }
-      .value-card h3 { margin-top: 0; }
-      .floating-whatsapp { position: fixed; right: 20px; bottom: 20px; width: 62px; height: 62px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: #25D366; color: #fff; font-size: 28px; box-shadow: 0 18px 40px rgba(0,0,0,.25); text-decoration: none; z-index: 9999; }
-      .floating-whatsapp:hover { transform: translateY(-2px); }
-      .whatsapp-support { position: fixed; right: 96px; bottom: 32px; padding: 12px 18px; border-radius: 999px; background: rgba(37,211,102,.18); color: #eafaf1; font-weight: 700; box-shadow: 0 18px 40px rgba(0,0,0,.18); z-index: 9998; }
-      @media (max-width: 980px) { .hero { grid-template-columns: 1fr; } .features { grid-template-columns: 1fr; } .value-grid { grid-template-columns: 1fr; } }
-      @media (max-width: 680px) { .header, .hero-actions { flex-direction: column; align-items: stretch; } .hero-actions { width: 100%; } }
+      html { scroll-behavior: smooth; }
+      a { color: inherit; text-decoration: none; }
+      .page { width: min(1180px, calc(100% - 32px)); margin: 0 auto; padding: 24px 0 48px; }
+      .topbar { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 16px 0; }
+      .brand { font-size: 1.3rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #58c7ff; }
+      .nav { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
+      .nav a { color: #d8e4ff; font-weight: 500; }
+      .cta-primary { padding: 14px 26px; border-radius: 999px; background: linear-gradient(135deg, #22d3ee 0%, #2b6cff 100%); color: #031124; font-weight: 700; }
+      .hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 32px; align-items: center; padding: 60px 0 40px; }
+      .hero-copy { max-width: 620px; }
+      .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 20px; padding: 10px 16px; border-radius: 999px; background: rgba(56, 149, 255, 0.12); color: #8cd1ff; font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; }
+      .hero-title { font-size: clamp(3rem, 5vw, 4.5rem); line-height: 0.98; margin: 0; letter-spacing: -0.04em; }
+      .hero-description { margin: 24px 0 32px; max-width: 560px; color: #b8c8e1; font-size: 1.05rem; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+      .hero-actions a { display: inline-flex; align-items: center; justify-content: center; min-width: 180px; }
+      .button-secondary { padding: 14px 24px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); color: #f4f8ff; background: rgba(255,255,255,0.04); }
+      .hero-metrics { display: grid; grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 18px; margin-top: 40px; }
+      .metric { padding: 20px 18px; border-radius: 24px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+      .metric strong { display: block; font-size: 1.9rem; color: #fff; }
+      .metric span { color: #9bb4d0; }
+      .hero-image { position: relative; border-radius: 30px; overflow: hidden; box-shadow: 0 40px 120px rgba(22, 33, 57, 0.45); }
+      .hero-image:before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.08), transparent 60%); pointer-events: none; }
+      .hero-image img { width: 100%; display: block; height: auto; }
+      .section { padding: 70px 0; }
+      .section-headline { text-align: center; margin-bottom: 44px; }
+      .section-headline h2 { margin: 0; font-size: clamp(2rem, 3vw, 2.9rem); }
+      .section-headline p { margin: 16px auto 0; max-width: 760px; color: #aabed7; }
+      .feature-grid { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 22px; }
+      .feature-card { padding: 30px 26px; border-radius: 28px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); min-height: 260px; }
+      .feature-card h3 { margin-top: 0; font-size: 1.28rem; }
+      .feature-card p { color: #bfccdf; line-height: 1.8; }
+      .screenshot-grid { display: grid; grid-template-columns: repeat(4, minmax(180px, 1fr)); gap: 18px; }
+      .screenshot-card { border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.03); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02); }
+      .screenshot-card img { width: 100%; display: block; height: 200px; object-fit: cover; }
+      .screenshot-card p { margin: 12px; color: #d7e1f2; font-size: 0.95rem; }
+      .contact-panel { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 22px; align-items: stretch; }
+      .contact-panel .panel { padding: 32px; border-radius: 28px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); }
+      .contact-panel h3 { margin-top: 0; }
+      .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+      .contact-list li { display: grid; grid-template-columns: 110px 1fr; gap: 12px; color: #dbe4f5; }
+      .contact-list strong { color: #ffffff; }
+      .footer { padding-top: 24px; text-align: center; color: #7f95b8; font-size: 0.95rem; }
+      .floating-whatsapp { position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; border-radius: 50%; background: #25d366; color: #fff; display: inline-flex; align-items: center; justify-content: center; text-decoration: none; font-size: 28px; box-shadow: 0 22px 50px rgba(0,0,0,0.25); z-index: 999; }
+      .floating-whatsapp:hover { transform: translateY(-3px); }
+      @media (max-width: 980px) { .hero, .contact-panel { grid-template-columns: 1fr; } .feature-grid { grid-template-columns: 1fr; } .screenshot-grid { grid-template-columns: repeat(2, minmax(180px, 1fr)); } }
+      @media (max-width: 680px) { .topbar { flex-direction: column; align-items: flex-start; } .nav { width: 100%; justify-content: space-between; } .hero-actions { width: 100%; } .hero-actions a { flex: 1; } .screenshot-grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
     <div class="page">
-      <header class="header">
+      <header class="topbar">
         <a class="brand" href="/">EarnQube.site</a>
         <nav class="nav" aria-label="Primary navigation">
           <a href="#how">How it works</a>
@@ -76,97 +85,105 @@
           <a href="#screenshots">Screenshots</a>
           <a href="#contact">Contact</a>
           <a href="https://mulaprime.com/user/login.php?ref=Bridan" target="_blank" rel="noopener noreferrer">Sign In</a>
-          <a class="button button-primary" href="https://mulaprime.com/user/register.php?ref=Bridan" target="_blank" rel="noopener noreferrer">Sign Up</a>
+          <a class="cta-primary" href="https://mulaprime.com/user/register.php?ref=Bridan" target="_blank" rel="noopener noreferrer">Sign Up</a>
         </nav>
       </header>
+
       <section class="hero">
-        <div>
-          <p style="color:#47c9ff;font-weight:700;margin-bottom:14px;letter-spacing:.12em;text-transform:uppercase;font-size:.9rem;">EarnQube.site</p>
-          <h1 class="hero-title">Earn money online with chat, videos, tasks, and rewards.</h1>
-          <p class="hero-text">EarnQube.site makes it easy to turn everyday online time into real earnings. Chat with communities, watch videos, complete simple tasks, and withdraw to your preferred wallet.</p>
+        <div class="hero-copy">
+          <span class="eyebrow">EarnQube.site</span>
+          <h1 class="hero-title">Professional online earnings, built for referrals, videos, tasks and support.</h1>
+          <p class="hero-description">EarnQube.site offers a polished earning experience with clear payouts, fast WhatsApp support, and account access directly through your referral links.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="https://mulaprime.com/user/register.php?ref=Bridan">Start Earning</a>
-            <a class="button button-secondary" href="#screenshots">See Money Proof</a>
+            <a class="cta-primary" href="https://mulaprime.com/user/register.php?ref=Bridan">Join Now</a>
+            <a class="button-secondary" href="#screenshots">View Proof</a>
           </div>
-          <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;color:#c9d6e7;">
-            <div><strong>WhatsApp:</strong> <a href="https://wa.me/256740262269" target="_blank" rel="noopener noreferrer">+256 740 262 269</a></div>
-            <div><strong>Email:</strong> <a href="mailto:earnqubesite@gmmail.com">earnqubesite@gmmail.com</a></div>
+          <div class="hero-metrics">
+            <div class="metric"><strong>4.8/5</strong><span>Trusted rating</span></div>
+            <div class="metric"><strong>+256</strong><span>WhatsApp support</span></div>
+            <div class="metric"><strong>Instant</strong><span>Referral payouts</span></div>
           </div>
         </div>
         <div class="hero-image">
-          <img src="https://via.placeholder.com/720x560?text=EarnQube.site+Dashboard" alt="EarnQube.site earning dashboard" />
+          <img src="https://via.placeholder.com/900x700?text=EarnQube.site+Dashboard+Preview" alt="EarnQube.site dashboard screenshot" />
         </div>
       </section>
+
       <section id="how" class="section">
         <div class="section-headline">
           <h2>How EarnQube.site works</h2>
-          <p>Join with your referral link, complete easy tasks, watch video offers, chat in active communities, and earn daily rewards while you build your balance.</p>
+          <p>Sign up with your referral link, complete earning tasks, watch reward videos, and collect payouts while your support network grows.</p>
         </div>
-        <div class="features">
+        <div class="feature-grid">
           <div class="feature-card">
-            <h3>Chat & earn</h3>
-            <p>Jump into paid chat rooms and earn for messages, referrals, and bonus activity.</p>
+            <h3>Referral growth</h3>
+            <p>Share your referral link and earn additional rewards each time a new member registers through your link.</p>
           </div>
           <div class="feature-card">
-            <h3>Watch videos</h3>
-            <p>Watch sponsored videos and ads to unlock extra cash and points instantly.</p>
+            <h3>Task rewards</h3>
+            <p>Complete easy tasks and watch short videos to build your balance quickly and securely.</p>
           </div>
           <div class="feature-card">
-            <h3>Complete tasks</h3>
-            <p>Finish simple surveys, offers, and daily tasks to increase your payout faster.</p>
+            <h3>Fast support</h3>
+            <p>Reach out directly on WhatsApp or email whenever you need help or want a payout update.</p>
           </div>
         </div>
       </section>
+
       <section id="features" class="section">
         <div class="section-headline">
-          <h2>EarnQube.site Features</h2>
-          <p>Everything from referral bonuses to instant withdrawals and mobile-friendly earning tools.</p>
+          <h2>Professional platform features</h2>
+          <p>EarnQube.site keeps the interface clean, the payout path transparent, and the support channels available around the clock.</p>
         </div>
-        <div class="value-grid">
-          <div class="value-card">
-            <h3>Referral rewards</h3>
-            <p>Share your referral link and earn more when your friends join.</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Modern dashboard</h3>
+            <p>Track your earnings, referrals, and daily bonuses from one polished dashboard.</p>
           </div>
-          <div class="value-card">
-            <h3>Fast withdrawals</h3>
-            <p>Cash out quickly through mobile money, PayPal, or other supported payout channels.</p>
+          <div class="feature-card">
+            <h3>Secure sign-in</h3>
+            <p>Access your account with your referral-linked login and keep your payout details protected.</p>
           </div>
-          <div class="value-card">
-            <h3>Daily bonuses</h3>
-            <p>Log in daily to claim bonuses and stay on track for higher payouts.</p>
-          </div>
-          <div class="value-card">
-            <h3>Secure account</h3>
-            <p>Your wallet data and payout details stay secure with encrypted account protection.</p>
+          <div class="feature-card">
+            <h3>Flexible earnings</h3>
+            <p>Choose chat, video, task, or referral rewards and cash out on a schedule that suits you.</p>
           </div>
         </div>
       </section>
+
       <section id="screenshots" class="section">
         <div class="section-headline">
-          <h2>Money proof screenshots</h2>
-          <p>See sample payout screenshots from EarnQube.site members who are already earning.</p>
+          <h2>Proof of earnings</h2>
+          <p>Screenshot examples show how earnings appear inside the dashboard, giving your visitors confidence in the platform.</p>
         </div>
-        <div class="money-screenshots">
-          <img src="https://via.placeholder.com/600x400?text=Payment+Proof+1" alt="Payment proof screenshot 1" />
-          <img src="https://via.placeholder.com/600x400?text=Payment+Proof+2" alt="Payment proof screenshot 2" />
-          <img src="https://via.placeholder.com/600x400?text=Payment+Proof+3" alt="Payment proof screenshot 3" />
+        <div class="screenshot-grid">
+          <div class="screenshot-card"><img src="https://via.placeholder.com/540x360?text=Payment+Proof+1" alt="Screenshot payment proof 1" /><p>Daily payouts shown on the EarnQube.site dashboard.</p></div>
+          <div class="screenshot-card"><img src="https://via.placeholder.com/540x360?text=Payment+Proof+2" alt="Screenshot payment proof 2" /><p>Rewards credited after a completed video session.</p></div>
+          <div class="screenshot-card"><img src="https://via.placeholder.com/540x360?text=Payment+Proof+3" alt="Screenshot payment proof 3" /><p>Referral bonus tracking and new user signups.</p></div>
+          <div class="screenshot-card"><img src="https://via.placeholder.com/540x360?text=Payment+Proof+4" alt="Screenshot payment proof 4" /><p>Instant withdrawal status and earned balance.</p></div>
         </div>
       </section>
+
       <section id="contact" class="section">
-        <div class="section-headline">
-          <h2>Contact & support</h2>
-          <p>Need help? Reach out through WhatsApp or email and start earning with EarnQube.site today.</p>
-        </div>
-        <div class="contact-card">
-          <div class="contact-row"><strong>WhatsApp</strong><a href="https://wa.me/256740262269" target="_blank" rel="noopener noreferrer">+256 740 262 269</a></div>
-          <div class="contact-row"><strong>Email</strong><a href="mailto:earnqubesite@gmmail.com">earnqubesite@gmmail.com</a></div>
-          <div class="contact-row"><strong>Sign up</strong><a href="https://mulaprime.com/user/register.php?ref=Bridan" target="_blank" rel="noopener noreferrer">Register with referral</a></div>
-          <div class="contact-row"><strong>Sign in</strong><a href="https://mulaprime.com/user/login.php?ref=Bridan" target="_blank" rel="noopener noreferrer">Existing user login</a></div>
+        <div class="section-headline"><h2>Contact & access</h2><p>Keep your details visible and easy to use so every visitor can reach support or sign in immediately.</p></div>
+        <div class="contact-panel">
+          <div class="panel">
+            <h3>Support details</h3>
+            <ul class="contact-list">
+              <li><strong>Email</strong><a href="mailto:earnqubesite@gmmail.com">earnqubesite@gmmail.com</a></li>
+              <li><strong>WhatsApp</strong><a href="https://wa.me/256740262269" target="_blank" rel="noopener noreferrer">+256 740 262 269</a></li>
+              <li><strong>Sign up</strong><a href="https://mulaprime.com/user/register.php?ref=Bridan" target="_blank" rel="noopener noreferrer">Register now</a></li>
+              <li><strong>Sign in</strong><a href="https://mulaprime.com/user/login.php?ref=Bridan" target="_blank" rel="noopener noreferrer">Existing dashboard</a></li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>EarnQube.site at a glance</h3>
+            <p>Fast access, clear payouts, expert support via WhatsApp, and a polished referral-ready landing page that keeps your details front and center.</p>
+          </div>
         </div>
       </section>
-      <footer class="footer">
-        EarnQube.site · Powered by your referrals, videos, chat, and task rewards.
-      </footer>
+
+      <footer class="footer">EarnQube.site · Trusted online earnings with referral and support details included.</footer>
     </div>
     <a class="floating-whatsapp" href="https://wa.me/256740262269" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">💬</a>
   </body>
