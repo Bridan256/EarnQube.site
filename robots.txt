@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://earnqube.site/sitemap.xml
+Host: earnqube.site
