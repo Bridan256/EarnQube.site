@@ -1,429 +1,314 @@
-/* ==============================
-   Global Styles & Reset
-   ============================== */
 :root {
   --bg-body: #030712;
   --bg-card: #0f172a;
   --bg-accent: #1e293b;
   --text-main: #f9fafb;
   --text-muted: #9ca3af;
-  --color-primary: #10b981; /* Green */
-  --color-secondary: #3b82f6; /* Blue */
-  --color-danger: #ef4444; /* Red */
-  --glow-green: rgba(16, 185, 129, 0.35);
+  --color-primary: #10b981;
+  --color-secondary: #3b82f6;
+  --color-danger: #ef4444;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%; /* Force strict containment to avoid horizontal scrolling */
 }
 
 body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-body);
   color: var(--text-main);
-  line-height: 1.5;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  padding-bottom: 80px; /* Space for footer */
+  overflow-x: hidden; /* Prevents left/right side scrolling */
+  padding-top: 65px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: all 0.2s ease;
-}
-
-ul {
-  list-style: none;
-}
-
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* ==============================
-   Typography
-   ============================== */
-h1, h2, h3 {
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  line-height: 1.2;
-  color: #fff;
-}
-
-h1 {
-  font-size: 3.5rem; /* Desktop size */
-  margin-bottom: 1rem;
-}
-
-h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-p {
-  color: var(--text-muted);
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-}
-
-.green-text { color: var(--color-primary); }
-.center-text { text-align: center; }
-
-/* ==============================
-   Navbar (Mobile Optimized)
-   ============================== */
-.navbar {
-  background: rgba(3, 7, 18, 0.8);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+/* Mobile Top Navbar */
+.mobile-navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 65px;
+  background: rgba(3, 7, 18, 0.95);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 16px;
   z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 800;
   color: #fff;
 }
-.logo span { color: var(--color-primary); }
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-.nav-links a:hover { color: var(--color-primary); }
-
-.nav-buttons {
-  display: flex;
-  gap: 0.8rem;
+.logo span {
+  color: var(--color-primary);
 }
 
-.btn-signin, .btn-join {
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.btn-signin {
-  background: transparent;
-  color: var(--text-muted);
-}
-.btn-signin:hover { color: #fff; }
-
-.btn-join {
-  background: var(--color-primary);
-  color: var(--bg-body);
-}
-.btn-join:hover { box-shadow: 0 0 15px var(--glow-green); }
-
-/* ==============================
-   Hero Section (Mobile Overhaul)
-   ============================== */
-.hero-section {
-  padding: 180px 5% 60px; /* Increased top padding for fixed nav */
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero-container {
+.mobile-nav-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
+  gap: 12px;
 }
 
-.hero-text {
-  flex: 1;
-  max-width: 600px;
+.nav-icon-btn {
+  font-size: 1.1rem;
+  background: var(--bg-accent);
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
 }
 
-/* Badge */
+.menu-toggle {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.mobile-dropdown {
+  display: none;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  background: var(--bg-card);
+  flex-direction: column;
+  padding: 20px;
+  gap: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  z-index: 999;
+}
+
+.mobile-dropdown a {
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.menu-btn-join {
+  background: var(--color-primary);
+  color: #030712 !important;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Mobile Container Layout */
+.mobile-container {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Hero Section */
+.mobile-hero h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.mobile-hero p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.green-text {
+  color: var(--color-primary);
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: rgba(16, 185, 129, 0.1);
   color: var(--color-primary);
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: 20px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 20px;
-  border: 1px solid var(--glow-green);
+  margin-bottom: 12px;
+  border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
 .dot-indicator {
-  height: 8px;
-  width: 8px;
-  background-color: var(--color-primary);
-  border-radius: 50%;
-  display: inline-block;
-  box-shadow: 0 0 10px var(--color-primary);
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.btn-primary, .btn-secondary {
-  padding: 16px 32px;
-  border-radius: 12px;
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-.btn-primary {
+  height: 6px;
+  width: 6px;
   background: var(--color-primary);
-  color: var(--bg-body);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--color-primary);
 }
-.btn-primary:hover { box-shadow: 0 0 20px var(--glow-green); }
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-primary, .task-action-btn {
+  background: var(--color-primary);
+  color: #030712;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-align: center;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: block;
+}
 
 .btn-secondary {
   background: var(--bg-accent);
   color: #fff;
-}
-.btn-secondary:hover { background: #27354a; }
-
-/* Hero Mockup (Mobile Fix) */
-.hero-mockup {
-  flex: 0 0 350px; /* Fixed width on desktop */
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.phone-frame {
-  width: 300px;
-  height: 600px;
-  background: #111827;
-  border-radius: 40px;
-  padding: 12px;
-  box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5), 0 0 0 4px #1f2937;
-  position: relative;
-}
-
-.phone-screen {
-  background: var(--bg-body);
-  width: 100%;
-  height: 100%;
-  border-radius: 28px;
-  overflow: hidden;
-  padding: 20px;
-}
-
-/* Dashboard Elements inside Mockup */
-.phone-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.user-info { display: flex; align-items: center; gap: 10px; }
-.user-info img { width: 35px; height: 35px; border-radius: 50%; }
-.user-info strong { font-size: 0.9rem; }
-.user-info small { font-size: 0.7rem; color: var(--text-muted); }
-.notification-icon { font-size: 1.2rem; color: var(--text-muted); }
-
-.balance-card {
-  background: var(--bg-accent);
-  padding: 20px;
-  border-radius: 16px;
-  margin-bottom: 20px;
-}
-.balance-card small { color: var(--text-muted); font-size: 0.8rem; }
-.balance-card h2 { font-size: 1.8rem; margin: 5px 0; }
-.total-earnings { font-size: 0.8rem; color: var(--text-muted); }
-.total-earnings span { color: var(--color-primary); font-weight: 600; }
-
-.quick-actions-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; }
-.quick-actions-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 20px;
-}
-.q-action-btn {
-  background: var(--bg-accent);
-  padding: 10px;
+  padding: 12px 16px;
   border-radius: 10px;
+  font-weight: 600;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: block;
 }
-.q-action-btn span { display: block; font-size: 0.7rem; margin-top: 5px; color: var(--text-muted); }
 
-.recent-earnings-box {
-  background: var(--bg-accent);
-  padding: 10px;
-  border-radius: 10px;
+/* Dashboard Card Preview */
+.dashboard-preview-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.preview-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-info img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-info small {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  display: block;
+}
+
+.user-info strong {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.live-pill {
+  font-size: 0.7rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.preview-stats {
+  display: flex;
+  justify-content: space-between;
+  background: var(--bg-accent);
+  padding: 10px;
+  border-radius: 8px;
   font-size: 0.8rem;
 }
-.re-left { display: flex; align-items: center; gap: 10px; color: var(--color-danger); }
-.re-right { color: var(--color-primary); font-weight: 600; }
 
-/* ==============================
-   Stats Bar (Mobile Stack)
-   ============================== */
-.stats-bar {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  background: var(--bg-card);
-  padding: 30px 5%;
-  margin-top: 100px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+.preview-stats small {
+  color: var(--text-muted);
+  display: block;
 }
 
-.stat-card {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+.preview-stats strong {
+  color: #fff;
 }
 
-.stat-icon { font-size: 2rem; }
-.stat-card h3 { font-size: 1.5rem; }
-.stat-card p { font-size: 0.9rem; margin: 0; }
-
-/* ==============================
-   General Section Spacing
-   ============================== */
-.section-padding { padding: 80px 5%; }
-.ways-section { padding: 100px 5%; }
-.steps-section { padding: 100px 5%; }
+/* Sections */
+.mobile-section h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #fff;
+}
 
 .section-tag {
-  display: block;
-  text-align: center;
+  font-size: 0.75rem;
   color: var(--color-primary);
-  font-size: 0.9rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+  text-transform: uppercase;
 }
 
-.section-subtitle {
-  max-width: 600px;
-  margin: 0 auto 60px;
-  text-align: center;
-  font-size: 1.2rem;
-}
-
-/* ==============================
-   Ways & Testimonials Grids (Mobile Grid)
-   ============================== */
-.ways-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adapts to screen size */
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.way-card {
-  background: var(--bg-card);
-  padding: 40px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.05);
-  transition: all 0.3s ease;
-}
-.way-card:hover { transform: translateY(-5px); border-color: var(--glow-green); }
-
-.way-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 16px;
+.mobile-stack {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
   align-items: center;
-  font-size: 1.5rem;
-  margin-bottom: 25px;
-}
-/* Icon Colors */
-.red-bg { background: rgba(239, 68, 68, 0.1); color: var(--color-danger); }
-.blue-bg { background: rgba(59, 130, 246, 0.1); color: var(--color-secondary); }
-.green-bg { background: rgba(16, 185, 129, 0.1); color: var(--color-primary); }
-.dark-bg { background: rgba(31, 41, 55, 0.5); color: var(--text-muted); }
-
-.way-card h3 { margin-bottom: 15px; }
-.way-card p { font-size: 1rem; margin: 0; }
-
-/* ==============================
-   Steps Section (Mobile Stack)
-   ============================== */
-.steps-grid {
-  display: flex;
   justify-content: center;
-  align-items: flex-start;
-  gap: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
 }
 
-.step-card {
-  flex: 1;
-  text-align: center;
-  padding: 30px;
-  position: relative;
+.red-bg { background: rgba(239,68,68,0.1); color: var(--color-danger); }
+.green-bg { background: rgba(16,185,129,0.1); color: var(--color-primary); }
+
+.card-content h3 {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+  color: #fff;
 }
 
-.step-number {
-  font-size: 5rem;
-  font-weight: 900;
-  color: rgba(255,255,255,0.03);
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: -1;
+.card-content p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
 }
 
-.step-icon { font-size: 2.5rem; margin-bottom: 20px; color: var(--color-primary); }
-.step-arrow { font-size: 2rem; color: var(--text-muted); margin-top: 40px; }
-
-/* ==============================
-   FAQ & Contact (Mobile Spacing)
-   ============================== */
-.faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
-.faq-item { background: var(--bg-card); padding: 30px; border-radius: 16px; }
-.faq-item h3 { margin-bottom: 10px; font-size: 1.2rem; }
-.faq-item p { margin: 0; font-size: 1rem; }
-
-.contact-box { background: var(--bg-card); padding: 60px; border-radius: 20px; text-align: center; max-width: 800px; margin: 0 auto; border: 1px solid var(--glow-green); }
-.contact-details { margin: 30px 0; font-size: 1.1rem; color: #fff; }
-
-/* ==============================
-   Footer
-   ============================== */
-.footer {
+/* Footer */
+.mobile-footer {
   background: var(--bg-card);
-  padding: 40px 5%;
+  padding: 25px 16px;
   text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255,255,255,0.05);
+  margin-top: 20px;
+}
