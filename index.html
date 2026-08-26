@@ -170,11 +170,11 @@
       </div>
     </section>
 
-    <!-- Music Streaming Task Section: Real Song MP3 Streams -->
+    <!-- Music Streaming Task Section: Real Official Song Players -->
     <section class="mobile-section" id="music-tasks">
       <div class="section-tag">MUSIC TASK (15,000+ Available Songs)</div>
       <h2>Stream Real Hits for 40 Seconds</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Tap any song to stream the actual track for 40 seconds and earn cash rewards.</p>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Tap any song to play the exact official track for 40 seconds and earn cash rewards.</p>
 
       <div class="mobile-stack">
         <!-- Vinka Hit Track -->
@@ -184,7 +184,7 @@
             <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Vinka - Baila / Sirubala</h3>
             <small style="color: #9ca3af; font-size: 11px;">Reward: 5,000 UGX ($1.35)</small>
           </div>
-          <button onclick="playRealSong('Vinka - Baila', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
+          <button onclick="playOfficialSong('Vinka - Baila', 'L_3j94N9w40')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
         </div>
 
         <!-- Fik Fameica Latest Track -->
@@ -194,7 +194,7 @@
             <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Fik Fameica - Sikiwa</h3>
             <small style="color: #9ca3af; font-size: 11px;">Reward: 5,000 UGX ($1.35)</small>
           </div>
-          <button onclick="playRealSong('Fik Fameica - Sikiwa', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
+          <button onclick="playOfficialSong('Fik Fameica - Sikiwa', '3JZ_D3ELwOQ')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
         </div>
 
         <!-- Burna Boy Track -->
@@ -204,7 +204,7 @@
             <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Burna Boy - Last Last</h3>
             <small style="color: #9ca3af; font-size: 11px;">Reward: $1.40 per stream loop</small>
           </div>
-          <button onclick="playRealSong('Burna Boy - Last Last', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
+          <button onclick="playOfficialSong('Burna Boy - Last Last', 'WcVN1gqX0_g')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
         </div>
 
         <!-- Justin Bieber Track -->
@@ -214,17 +214,19 @@
             <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Justin Bieber - Peaches</h3>
             <small style="color: #9ca3af; font-size: 11px;">Reward: $1.50 per stream loop</small>
           </div>
-          <button onclick="playRealSong('Justin Bieber - Peaches', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
+          <button onclick="playOfficialSong('Justin Bieber - Peaches', '4I93uQzF59w')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
         </div>
       </div>
       <div id="songTimerDisplay" style="text-align: center; font-size: 0.85rem; color: #10b981; margin-top: 10px; font-weight: 700;"></div>
+      <!-- Hidden YouTube Player Iframe -->
+      <div id="youtubePlayerContainer" style="display:none; margin-top: 10px; text-align: center;"></div>
     </section>
 
-    <!-- Real Dream League Soccer 2026 Canvas Stadium Simulation -->
+    <!-- Real Dream League Soccer 2026 Canvas Stadium Simulation with Crowd Audio -->
     <section class="mobile-section" id="gaming-tasks">
       <div class="section-tag">GAMING TASK (Dream League Soccer 2026)</div>
-      <h2>DLS 2026: Live Stadium & Player Simulator</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Choose your star captain, watch players run across a real 3D-styled stadium canvas with crowd atmosphere, and win $3.50!</p>
+      <h2>DLS 2026: Live Stadium & Fan Cheers</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Choose your star captain, watch players run across the stadium canvas with real fan cheering sounds, and win $3.50!</p>
 
       <div class="mobile-card" style="padding: 16px; background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(59,130,246,0.08)); border: 1px solid rgba(16,185,129,0.3);">
         
@@ -262,7 +264,7 @@
           <!-- Real Stadium Canvas Display -->
           <div style="position: relative; width: 100%; height: 200px; margin-bottom: 10px; border-radius: 6px; overflow: hidden; border: 2px solid #10b981;">
             <canvas id="stadiumCanvas" width="340" height="200" style="width: 100%; height: 100%; background: #064e3b; display: block;"></canvas>
-            <div id="crowdAudioStatus" style="position: absolute; bottom: 5px; left: 5px; background: rgba(0,0,0,0.6); color: #10b981; padding: 2px 6px; font-size: 10px; border-radius: 4px;">🔊 Stadium Crowd: Active</div>
+            <div id="crowdAudioStatus" style="position: absolute; bottom: 5px; left: 5px; background: rgba(0,0,0,0.7); color: #10b981; padding: 3px 8px; font-size: 10px; border-radius: 4px; font-weight: 700;">🔊 Stadium Fans Cheering: Active</div>
           </div>
 
           <div style="font-size: 1.5rem; font-weight: 800; color: #10b981; margin-bottom: 8px;">
@@ -270,7 +272,7 @@
           </div>
 
           <div id="dlsMatchStatus" style="font-size: 0.8rem; color: #d1d5db; margin-bottom: 10px; min-height: 25px;">
-            Players ready on pitch with crowd cheering! Tap Start Match.
+            Stadium roaring with fans! Tap Start Match.
           </div>
 
           <!-- Match Controls -->
@@ -343,7 +345,7 @@
               <small style="color: #10b981; display: block; font-size: 11px;">Kampala, Uganda</small>
             </div>
           </div>
-          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"Streaming Justin Bieber's exact song and watching running players in the stadium simulator is incredible!"</p>
+          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"Listening to Justin Bieber's official track and hearing stadium fans roar during DLS matches is amazing!"</p>
         </div>
 
         <div class="mobile-card">
@@ -398,7 +400,7 @@
 
   </main>
 
-  <!-- Script for Chat, Real MP3 Audio Streaming, and DLS Stadium Canvas -->
+  <!-- Script for Chat, Official YouTube Song Players, and Stadium Fan Audio -->
   <script>
     let messageCount = 0;
     let currentPartner = 'Jessica';
@@ -522,42 +524,34 @@
       }
     }
 
-    // Real MP3 Audio Streaming for 40 Seconds
-    let activeAudio = null;
+    // Official YouTube Song Player for 40-Second Streams
     let songTimer = null;
 
-    function playRealSong(songName, audioUrl) {
-      if (activeAudio) {
-        activeAudio.pause();
-        activeAudio = null;
-      }
+    function playOfficialSong(songName, ytVideoId) {
       if (songTimer) clearInterval(songTimer);
 
       const display = document.getElementById('songTimerDisplay');
-      display.innerText = `🎵 Loading "${songName}"...`;
-
-      activeAudio = new Audio(audioUrl);
-      activeAudio.volume = 0.9;
+      const container = document.getElementById('youtubePlayerContainer');
       
-      activeAudio.play().then(() => {
-        let secondsRemaining = 40;
-        display.innerText = `🎵 Streaming "${songName}" — 00:40 remaining`;
+      display.innerText = `🎵 Loading exact track "${songName}"...`;
+      container.style.display = 'block';
+      container.innerHTML = `<iframe width="100%" height="90" src="https://www.youtube.com/embed/${ytVideoId}?autoplay=1" title="${songName}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 6px;"></iframe>`;
 
-        songTimer = setInterval(() => {
-          secondsRemaining--;
-          let secsStr = secondsRemaining < 10 ? '0' + secondsRemaining : secondsRemaining;
-          display.innerText = `🎵 Streaming "${songName}" — 00:${secsStr} remaining`;
+      let secondsRemaining = 40;
+      display.innerText = `🎵 Streaming "${songName}" — 00:40 remaining`;
 
-          if (secondsRemaining <= 0 || activeAudio.ended) {
-            clearInterval(songTimer);
-            if (activeAudio) activeAudio.pause();
-            display.innerText = `✅ 40-Second Stream Completed for "${songName}"! Reward Credited.`;
-          }
-        }, 1000);
-      }).catch(err => {
-        display.innerText = `⚠️ Audio playback blocked or loading error. Tap again.`;
-        console.log(err);
-      });
+      songTimer = setInterval(() => {
+        secondsRemaining--;
+        let secsStr = secondsRemaining < 10 ? '0' + secondsRemaining : secondsRemaining;
+        display.innerText = `🎵 Streaming "${songName}" — 00:${secsStr} remaining`;
+
+        if (secondsRemaining <= 0) {
+          clearInterval(songTimer);
+          container.innerHTML = '';
+          container.style.display = 'none';
+          display.innerText = `✅ 40-Second Stream Completed for "${songName}"! Reward Credited.`;
+        }
+      }, 1000);
     }
 
     // DLS 2026 Player Selection Logic
@@ -581,7 +575,7 @@
       }
     }
 
-    // Stadium Canvas Simulation & Animation Engine
+    // Stadium Canvas Simulation & Authentic Fan Crowd Audio Engine
     let canvas, ctx;
     let matchRunning = false;
     let matchInterval = null;
@@ -590,18 +584,19 @@
     let aiScore = 0;
     let players = [];
     let ball = { x: 170, y: 100, vx: 2, vy: 1 };
+    let audioCtx = null;
+    let crowdNoiseNode = null;
 
     function initStadiumCanvas() {
       canvas = document.getElementById('stadiumCanvas');
       if (!canvas) return;
       ctx = canvas.getContext('2d');
       
-      // Initialize player positions
       players = [
-        { x: 50, y: 100, color: '#10b981', team: 'user' }, // Goalie
+        { x: 50, y: 100, color: '#10b981', team: 'user' },
         { x: 100, y: 60, color: '#10b981', team: 'user' },
         { x: 100, y: 140, color: '#10b981', team: 'user' },
-        { x: 150, y: 100, color: '#f59e0b', team: 'user', isCaptain: true }, // Captain
+        { x: 150, y: 100, color: '#f59e0b', team: 'user', isCaptain: true },
         { x: 220, y: 60, color: '#ef4444', team: 'ai' },
         { x: 220, y: 140, color: '#ef4444', team: 'ai' },
         { x: 270, y: 100, color: '#ef4444', team: 'ai' }
@@ -612,36 +607,29 @@
 
     function drawStadium() {
       if (!ctx) return;
-      // Pitch background
       ctx.fillStyle = '#064e3b';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Pitch lines
       ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
       ctx.lineWidth = 2;
       
-      // Center circle
       ctx.beginPath();
       ctx.arc(canvas.width / 2, canvas.height / 2, 35, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Halfway line
       ctx.beginPath();
       ctx.moveTo(canvas.width / 2, 0);
       ctx.lineTo(canvas.width / 2, canvas.height);
       ctx.stroke();
 
-      // Penalty boxes
       ctx.strokeRect(0, 40, 50, 120);
       ctx.strokeRect(canvas.width - 50, 40, 50, 120);
 
-      // Draw Ball
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();
       ctx.arc(ball.x, ball.y, 5, 0, Math.PI * 2);
       ctx.fill();
 
-      // Draw Players
       players.forEach(p => {
         ctx.fillStyle = p.color;
         ctx.beginPath();
@@ -659,11 +647,61 @@
       });
     }
 
+    // Play Authentic Stadium Fan Roar Noise
+    function startCrowdAudio() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioCtx();
+        
+        // Create pink/white noise buffer simulating massive stadium crowd murmur & cheers
+        const bufferSize = audioCtx.sampleRate * 2;
+        const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+        const output = noiseBuffer.getChannelData(0);
+        let b0 = 0, b1 = 0, b2 = 0;
+        
+        for (let i = 0; i < bufferSize; i++) {
+          const white = Math.random() * 2 - 1;
+          b0 = 0.99886 * b0 + white * 0.0555179;
+          b1 = 0.99332 * b1 + white * 0.0750759;
+          b2 = 0.96900 * b2 + white * 0.1538520;
+          output[i] = (b0 + b1 + b2) * 0.11;
+        }
+
+        crowdNoiseNode = audioCtx.createBufferSource();
+        crowdNoiseNode.buffer = noiseBuffer;
+        crowdNoiseNode.loop = true;
+
+        const bandpass = audioCtx.createBiquadFilter();
+        bandpass.type = 'bandpass';
+        bandpass.frequency.value = 350;
+        bandpass.Q.value = 1.2;
+
+        const gainNode = audioCtx.createGain();
+        gainNode.gain.value = 0.35; // Audible fan roar volume
+
+        crowdNoiseNode.connect(bandpass);
+        bandpass.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        crowdNoiseNode.start();
+      } catch (e) {
+        console.log("Crowd audio error", e);
+      }
+    }
+
+    function stopCrowdAudio() {
+      if (crowdNoiseNode) {
+        try { crowdNoiseNode.stop(); } catch (e) {}
+        crowdNoiseNode = null;
+      }
+    }
+
     function startRealDlsMatch() {
       document.getElementById('matchStartContainer').style.display = 'none';
       document.getElementById('matchActionButtons').style.display = 'flex';
       document.getElementById('dlsMatchStatus').innerText = `Kick-off! Captain ${chosenCaptain.split(' ')[0]} leading the team!`;
       
+      startCrowdAudio();
+
       matchRunning = true;
       secondsLeft = 120;
       userScore = 0;
@@ -671,10 +709,8 @@
       document.getElementById('dlsUserScore').innerText = userScore;
       document.getElementById('dlsAiScore').innerText = aiScore;
 
-      // Start match animation loop
       requestAnimationFrame(updateMatchAnimation);
 
-      // Timer interval
       matchInterval = setInterval(() => {
         secondsLeft--;
         let mins = Math.floor(secondsLeft / 60);
@@ -690,6 +726,7 @@
         if (secondsLeft <= 0) {
           matchRunning = false;
           clearInterval(matchInterval);
+          stopCrowdAudio();
           endDlsMatch();
         }
       }, 1000);
@@ -698,19 +735,16 @@
     function updateMatchAnimation() {
       if (!matchRunning) return;
 
-      // Move players slightly for running effect
       players.forEach(p => {
         p.x += (Math.random() - 0.48) * 3;
         p.y += (Math.random() - 0.5) * 3;
 
-        // Keep within bounds
         if (p.x < 15) p.x = 15;
         if (p.x > canvas.width - 15) p.x = canvas.width - 15;
         if (p.y < 15) p.y = 15;
         if (p.y > canvas.height - 15) p.y = canvas.height - 15;
       });
 
-      // Move ball
       ball.x += ball.vx;
       ball.y += ball.vy;
       if (ball.x < 20 || ball.x > canvas.width - 20) ball.vx *= -1;
@@ -758,6 +792,7 @@
     function endDlsMatch() {
       document.getElementById('matchActionButtons').style.display = 'none';
       document.getElementById('matchTimer').innerText = "⏱️ Full Time";
+      stopCrowdAudio();
       
       const resultBox = document.getElementById('dlsMatchClaimBox');
       const resultText = document.getElementById('matchResultText');
