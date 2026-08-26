@@ -72,7 +72,7 @@
     <a href="#dashboard" onclick="toggleMenu()">Dashboard</a>
     <a href="#interactive-chat" onclick="toggleMenu()">Foreigner Chat Tasks</a>
     <a href="#music-tasks" onclick="toggleMenu()">Music Streaming Task</a>
-    <a href="#gaming-tasks" onclick="toggleMenu()">Gaming Demos</a>
+    <a href="#gaming-tasks" onclick="toggleMenu()">DLS 2026 Match Task</a>
     <a href="#how-to-earn" onclick="toggleMenu()">Ways to Earn</a>
     <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
     <a href="#faq" onclick="toggleMenu()">FAQ</a>
@@ -89,7 +89,7 @@
         <span class="dot-indicator"></span> Trusted by 50M+ Active Users Worldwide
       </div>
       <h1>Turn everyday actions into <span class="green-text">real money.</span></h1>
-      <p>Join over 50 million active users earning cash from streaming hit tracks by Vinka, Fik Fameica, Burna Boy & Justin Bieber, playing game demos, and completing over 50,000 tasks daily.</p>
+      <p>Join over 50 million active users earning cash from chatting with exactly 3 online foreign partners, 40-second music streaming streams, and Dream League Soccer 2026 matches.</p>
       
       <div class="hero-buttons">
         <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" target="_blank" rel="noopener">Create Account & Activate</a>
@@ -123,13 +123,13 @@
       </div>
     </section>
 
-    <!-- Interactive 5-Message Foreigner Chat Task Section -->
+    <!-- Interactive 3 Foreign Partners Chat Task Section -->
     <section class="mobile-section" id="interactive-chat">
-      <div class="section-tag">LIVE TASK SIMULATION (18,000+ Available)</div>
+      <div class="section-tag">LIVE TASK SIMULATION (3 Online Partners)</div>
       <h2>Chat with Foreign Partners</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Select an online partner, complete 5 messages, and unlock your $3.00 payout.</p>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Select one of our 3 online partners below, complete 5 messages, and unlock your $3.00 payout.</p>
 
-      <!-- Partner Selection Tabs -->
+      <!-- Exactly 3 Partner Selection Tabs -->
       <div style="display: flex; gap: 6px; margin-bottom: 12px; overflow-x: auto; padding-bottom: 4px;">
         <button onclick="switchPartner('Jessica', '24 (New York)', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100', 0)" class="partner-tab active-tab" id="tab-0" style="background: var(--color-primary); color: #030712; border: none; padding: 6px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; white-space: nowrap;">Jessica (NY)</button>
         <button onclick="switchPartner('Lucas', '27 (London)', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100', 1)" class="partner-tab" id="tab-1" style="background: var(--bg-accent); color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 6px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer; white-space: nowrap;">Lucas (UK)</button>
@@ -170,11 +170,11 @@
       </div>
     </section>
 
-    <!-- Music Streaming Task Section: Vinka, Fik Fameica, Burna Boy, Justin Bieber -->
+    <!-- Music Streaming Task Section: 40-Second Playable Audio -->
     <section class="mobile-section" id="music-tasks">
       <div class="section-tag">MUSIC TASK (15,000+ Available Songs)</div>
-      <h2>Stream & Earn on Top Hits</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Stream hit songs by Vinka, Fik Fameica, Burna Boy, and Justin Bieber to get paid instantly.</p>
+      <h2>Stream Hits for 40 Seconds</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Tap any song to stream a full 40-second audio loop and earn cash rewards.</p>
 
       <div class="mobile-stack">
         <!-- Vinka Hit Track -->
@@ -184,7 +184,7 @@
             <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Vinka - Sirubala / Baila</h3>
             <small style="color: #9ca3af; font-size: 11px;">Reward: 5,000 UGX ($1.35)</small>
           </div>
-          <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="padding: 8px 12px; font-size: 12px;" target="_blank" rel="noopener">Stream Now</a>
+          <button onclick="playSong('Vinka - Sirubala', 440, 523, 659)" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
         </div>
 
         <!-- Fik Fameica Latest Track -->
@@ -194,7 +194,7 @@
             <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Fik Fameica - Sikiwa / Champion Gal</h3>
             <small style="color: #9ca3af; font-size: 11px;">Reward: 5,000 UGX ($1.35)</small>
           </div>
-          <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="padding: 8px 12px; font-size: 12px;" target="_blank" rel="noopener">Stream Now</a>
+          <button onclick="playSong('Fik Fameica - Sikiwa', 349, 440, 523)" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
         </div>
 
         <!-- Burna Boy Track -->
@@ -204,7 +204,7 @@
             <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Burna Boy - Last Last / Dai Dai</h3>
             <small style="color: #9ca3af; font-size: 11px;">Reward: $1.40 per stream loop</small>
           </div>
-          <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="padding: 8px 12px; font-size: 12px;" target="_blank" rel="noopener">Stream Now</a>
+          <button onclick="playSong('Burna Boy - Last Last', 392, 493, 587)" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
         </div>
 
         <!-- Justin Bieber Track -->
@@ -214,49 +214,77 @@
             <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Justin Bieber - Peaches / Stay</h3>
             <small style="color: #9ca3af; font-size: 11px;">Reward: $1.50 per stream loop</small>
           </div>
-          <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="padding: 8px 12px; font-size: 12px;" target="_blank" rel="noopener">Stream Now</a>
+          <button onclick="playSong('Justin Bieber - Peaches', 523, 659, 784)" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
         </div>
       </div>
+      <div id="songTimerDisplay" style="text-align: center; font-size: 0.85rem; color: #10b981; margin-top: 10px; font-weight: 700;"></div>
     </section>
 
-    <!-- Interactive Dream League Soccer (DLS) Demo Task Section -->
+    <!-- Real Dream League Soccer 2026 Task Section with Player Selection -->
     <section class="mobile-section" id="gaming-tasks">
-      <div class="section-tag">GAMING TASK (8,500 Available Demos)</div>
-      <h2>Dream League Soccer (DLS) Demo Task</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Test play the interactive DLS demo match simulation, score a goal, and collect your cash bounty.</p>
+      <div class="section-tag">GAMING TASK (Dream League Soccer 2026)</div>
+      <h2>DLS 2026: Choose Your Team & Play</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Select your star captain, customize your formation, and play a real 2-minute match simulation to win $3.50!</p>
 
       <div class="mobile-card" style="padding: 16px; background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(59,130,246,0.08)); border: 1px solid rgba(16,185,129,0.3);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-          <div>
-            <span style="font-size: 10px; color: #3b82f6; font-weight: 700; text-transform: uppercase;">Interactive Demo</span>
-            <h3 style="font-size: 15px; color: #fff; margin: 2px 0;">DLS 2026 Penalty & Match Simulation</h3>
-            <small style="color: #10b981; font-size: 11px;">Reward: $2.50 (9,000 UGX)</small>
+        
+        <!-- Step 1: Choose Your Captain/Player -->
+        <div id="playerSelectionArea">
+          <h3 style="font-size: 14px; color: #fff; margin-bottom: 8px;">Step 1: Choose Your Captain / Star Player</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px;">
+            <button onclick="selectCaptain('Kylian Mbappé (ST - 98 OVR)')" class="captain-btn active-captain" id="cap-0" style="background: var(--color-primary); color: #030712; border: none; padding: 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; cursor: pointer; text-align: left;">
+              ⭐ Mbappé (ST 98)
+            </button>
+            <button onclick="selectCaptain('Jude Bellingham (CM - 97 OVR)')" class="captain-btn" id="cap-1" style="background: var(--bg-accent); color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 600; cursor: pointer; text-align: left;">
+              ⭐ Bellingham (CM 97)
+            </button>
+            <button onclick="selectCaptain('Vinícius Jr. (LW - 96 OVR)')" class="captain-btn" id="cap-2" style="background: var(--bg-accent); color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 600; cursor: pointer; text-align: left;">
+              ⭐ Vinícius Jr (LW 96)
+            </button>
+            <button onclick="selectCaptain('Erling Haaland (ST - 98 OVR)')" class="captain-btn" id="cap-3" style="background: var(--bg-accent); color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 600; cursor: pointer; text-align: left;">
+              ⭐ Haaland (ST 98)
+            </button>
           </div>
-          <div style="background: rgba(59,130,246,0.15); color: #3b82f6; padding: 6px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 700;">
-            ⚽ DLS Demo
+          <div style="font-size: 0.8rem; color: #10b981; margin-bottom: 12px; font-weight: 600;">
+            Selected Captain: <span id="selectedCaptainText">Kylian Mbappé (ST - 98 OVR)</span>
           </div>
         </div>
 
-        <!-- DLS Interactive Demo Simulation Box -->
-        <div id="dlsGameArea" style="background: #030712; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; text-align: center; margin-bottom: 12px;">
-          <div id="dlsStatus" style="font-size: 0.85rem; color: #d1d5db; margin-bottom: 10px;">
-            Match Simulator Ready: Take a penalty shot to complete the task demo!
+        <!-- Step 2: Real 2-Minute Match Console -->
+        <div id="dlsConsole" style="background: #030712; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; text-align: center;">
+          
+          <div id="dlsMatchHeader" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.85rem; font-weight: 700; color: #fff;">
+            <span>USER XI (DLS 2026)</span>
+            <span id="matchTimer" style="background: #1f2937; padding: 4px 8px; border-radius: 4px; color: #f59e0b;">⏳ 02:00</span>
+            <span>RIVAL FC</span>
           </div>
-          <div style="font-size: 1.2rem; font-weight: 800; color: #10b981; margin-bottom: 12px;">
-            Score: <span id="userScore">0</span> - <span id="aiScore">0</span>
+
+          <div style="font-size: 1.5rem; font-weight: 800; color: #10b981; margin-bottom: 10px;">
+            <span id="dlsUserScore">0</span> - <span id="dlsAiScore">0</span>
           </div>
-          <div style="display: flex; gap: 8px; justify-content: center;" id="dlsButtonContainer">
-            <button onclick="playDlsShot('Left')" class="btn-secondary" style="font-size: 0.75rem; padding: 8px 12px;">Shoot Left 🥅</button>
-            <button onclick="playDlsShot('Center')" class="btn-secondary" style="font-size: 0.75rem; padding: 8px 12px;">Shoot Center 🎯</button>
-            <button onclick="playDlsShot('Right')" class="btn-secondary" style="font-size: 0.75rem; padding: 8px 12px;">Shoot Right ⚽</button>
+
+          <div id="dlsMatchStatus" style="font-size: 0.8rem; color: #d1d5db; margin-bottom: 12px; min-height: 35px;">
+            Ready to kick off DLS 2026 match with your chosen captain!
+          </div>
+
+          <!-- Match Controls -->
+          <div id="matchStartContainer">
+            <button onclick="startRealDlsMatch()" class="btn-primary" style="width: 100%; font-size: 0.85rem; padding: 10px;">▶ Start 2-Minute DLS Match</button>
+          </div>
+
+          <div id="matchActionButtons" style="display: none; gap: 6px; justify-content: center;">
+            <button onclick="dlsAction('attack')" class="btn-secondary" style="font-size: 0.75rem; padding: 8px 10px;">⚡ Captain Attack</button>
+            <button onclick="dlsAction('pass')" class="btn-secondary" style="font-size: 0.75rem; padding: 8px 10px;">🎯 Tiki-Taka Pass</button>
+            <button onclick="dlsAction('defend')" class="btn-secondary" style="font-size: 0.75rem; padding: 8px 10px;">🛡️ Hard Tackle</button>
           </div>
 
           <!-- DLS Claim Box (Hidden Initially) -->
-          <div id="dlsClaimBox" style="display: none; margin-top: 10px;">
-            <p style="color: #10b981; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">🎉 Goal! DLS Demo Task Completed Successfully!</p>
-            <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; font-size: 0.85rem; text-align: center;" target="_blank" rel="noopener">Claim $2.50 & Register Account</a>
+          <div id="dlsMatchClaimBox" style="display: none; margin-top: 10px;">
+            <p id="matchResultText" style="color: #10b981; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;"></p>
+            <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; font-size: 0.85rem; text-align: center;" target="_blank" rel="noopener">Claim $3.50 & Register Account</a>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -309,7 +337,7 @@
               <small style="color: #10b981; display: block; font-size: 11px;">Kampala, Uganda</small>
             </div>
           </div>
-          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"Streaming Vinka's 'Sirubala' and playing the DLS demo tasks while accessing over 50k tasks is fantastic!"</p>
+          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"Chatting with the 3 online partners and streaming Vinka for 40 seconds is fantastic!"</p>
         </div>
 
         <div class="mobile-card">
@@ -364,10 +392,11 @@
 
   </main>
 
-  <!-- Script for Chat & DLS Demo Game Simulation -->
+  <!-- Script for 3 Partners Chat, 40-Second Audio Streaming, and DLS 2026 Match -->
   <script>
     let messageCount = 0;
     let currentPartner = 'Jessica';
+    let chosenCaptain = 'Kylian Mbappé (ST - 98 OVR)';
 
     const partnerGreetings = {
       'Jessica': "Hi there! Let's chat for a bit so you can complete your daily task. How is your day going? 😊",
@@ -486,12 +515,160 @@
       }
     }
 
-    // DLS Demo Interactive Simulation Logic
-    function playDlsShot(direction) {
-      document.getElementById('userScore').innerText = '1';
-      document.getElementById('dlsStatus').innerText = `You shot to the ${direction} and scored past the keeper! ⚽🔥`;
-      document.getElementById('dlsButtonContainer').style.display = 'none';
-      document.getElementById('dlsClaimBox').style.display = 'block';
+    // 40-Second Audio Streaming Loop Synthesizer
+    let currentSongTimer = null;
+
+    function playSong(songName, f1, f2, f3) {
+      if (currentSongTimer) clearInterval(currentSongTimer);
+      
+      let secondsRemaining = 40;
+      const display = document.getElementById('songTimerDisplay');
+      display.innerText = `🎵 Streaming "${songName}" — 00:40 remaining`;
+
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        const ctx = new AudioContext();
+
+        const playChord = () => {
+          [f1, f2, f3].forEach((freq) => {
+            if (ctx.state === 'suspended') ctx.resume();
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.value = freq;
+            gain.gain.setValueAtTime(0.1, ctx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 3.0);
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.start();
+            osc.stop(ctx.currentTime + 3.0);
+          });
+        };
+
+        playChord();
+        const chordInterval = setInterval(playChord, 3500);
+
+        currentSongTimer = setInterval(() => {
+          secondsRemaining--;
+          let secsStr = secondsRemaining < 10 ? '0' + secondsRemaining : secondsRemaining;
+          display.innerText = `🎵 Streaming "${songName}" — 00:${secsStr} remaining`;
+
+          if (secondsRemaining <= 0) {
+            clearInterval(currentSongTimer);
+            clearInterval(chordInterval);
+            display.innerText = `✅ 40-Second Stream Completed for "${songName}"! Reward Credited.`;
+          }
+        }, 1000);
+
+      } catch (e) {
+        console.log("Audio error", e);
+        display.innerText = `✅ Stream completed for "${songName}"!`;
+      }
+    }
+
+    // DLS 2026 Player Selection Logic
+    function selectCaptain(playerName) {
+      chosenCaptain = playerName;
+      document.getElementById('selectedCaptainText').innerText = playerName;
+
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById('cap-' + i);
+        if (btn.innerText.includes(playerName.split(' ')[0])) {
+          btn.style.background = 'var(--color-primary)';
+          btn.style.color = '#030712';
+          btn.style.fontWeight = '700';
+          btn.style.border = 'none';
+        } else {
+          btn.style.background = 'var(--bg-accent)';
+          btn.style.color = '#fff';
+          btn.style.fontWeight = '600';
+          btn.style.border = '1px solid rgba(255,255,255,0.1)';
+        }
+      }
+    }
+
+    // Real 2-Minute Dream League Soccer 2026 Match Simulation Logic
+    let matchInterval = null;
+    let secondsLeft = 120; // 2 minutes = 120 seconds
+    let userScore = 0;
+    let aiScore = 0;
+
+    function startRealDlsMatch() {
+      document.getElementById('matchStartContainer').style.display = 'none';
+      document.getElementById('matchActionButtons').style.display = 'flex';
+      document.getElementById('dlsMatchStatus').innerText = `Kick-off! Captain ${chosenCaptain.split(' ')[0]} leads the attack!`;
+      
+      secondsLeft = 120;
+      userScore = 0;
+      aiScore = 0;
+      document.getElementById('dlsUserScore').innerText = userScore;
+      document.getElementById('dlsAiScore').innerText = aiScore;
+
+      matchInterval = setInterval(() => {
+        secondsLeft--;
+        let mins = Math.floor(secondsLeft / 60);
+        let secs = secondsLeft % 60;
+        document.getElementById('matchTimer').innerText = `⏳ 0${mins}:${secs < 10 ? '0' : ''}${secs}`;
+
+        if (secondsLeft % 25 === 0 && secondsLeft > 10) {
+          aiScore++;
+          document.getElementById('dlsAiScore').innerText = aiScore;
+          document.getElementById('dlsMatchStatus').innerText = "⚠️ Rival counter-attack! Rival scored a goal!";
+        }
+
+        if (secondsLeft <= 0) {
+          clearInterval(matchInterval);
+          endDlsMatch();
+        }
+      }, 1000);
+    }
+
+    function dlsAction(actionType) {
+      if (secondsLeft <= 0) return;
+
+      const playerName = chosenCaptain.split(' ')[0];
+
+      const statuses = {
+        'attack': [
+          `⚽ ${playerName} dribbles past two defenders and unleashes a thunderous GOAL!`,
+          `⚡ ${playerName} connects with a brilliant header into the top corner! GOAL!`,
+          `❌ Great shot by ${playerName}, but fingertip saved by the keeper!`
+        ],
+        'pass': [
+          `🎯 ${playerName} plays a visionary through-ball past the defense... GOAL!`,
+          `🔄 Smooth tiki-taka buildup led by ${playerName} maintains full pressure.`,
+          `❌ Pass intercepted by the rival defender.`
+        ],
+        'defend': [
+          `🛡️ ${playerName} drops back and makes a textbook sliding tackle to win possession!`,
+          `🔒 Solid defensive block by the team against a rival onslaught.`,
+          `⚠️ Foul committed during defensive pressure.`
+        ]
+      };
+
+      const options = statuses[actionType];
+      const selectedMsg = options[Math.floor(Math.random() * options.length)];
+      document.getElementById('dlsMatchStatus').innerText = selectedMsg;
+
+      if (selectedMsg.includes("GOAL!")) {
+        userScore++;
+        document.getElementById('dlsUserScore').innerText = userScore;
+      }
+    }
+
+    function endDlsMatch() {
+      document.getElementById('matchActionButtons').style.display = 'none';
+      document.getElementById('matchTimer').innerText = "⏱️ Full Time";
+      
+      const resultBox = document.getElementById('dlsMatchClaimBox');
+      const resultText = document.getElementById('matchResultText');
+
+      if (userScore >= aiScore) {
+        resultText.innerHTML = `🏆 Full Time! You Won ${userScore}-${aiScore} with ${chosenCaptain.split(' ')[0]} as Captain! Task Completed!`;
+      } else {
+        resultText.innerHTML = `🤝 Full Time! Match Ended ${userScore}-${aiScore}. DLS Task Bonus Unlocked!`;
+      }
+      resultBox.style.display = 'block';
     }
   </script>
 
