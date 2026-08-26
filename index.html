@@ -6,6 +6,36 @@
   <title>EarnQube.site | Mobile Earning Platform</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* Live Payout Ticker Styles */
+    .live-ticker-container {
+      background: rgba(16, 185, 129, 0.1);
+      border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 8px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      width: 100%;
+      font-size: 0.75rem;
+      color: #10b981;
+      font-weight: 600;
+    }
+    .live-ticker-track {
+      display: inline-block;
+      white-space: nowrap;
+      animation: tickerScroll 25s linear infinite;
+    }
+    .live-ticker-track span {
+      margin-right: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @keyframes tickerScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
 </head>
 <body>
 
@@ -18,10 +48,31 @@
     </div>
   </header>
 
+  <!-- Running Horizontal Live Payout Ticker -->
+  <div class="live-ticker-container">
+    <div class="live-ticker-track">
+      <span>🟢 User Bridan just withdrew $50.00</span>
+      <span>🟢 User Ronald M. withdrew 180,000 UGX ($48)</span>
+      <span>🟢 User Brenda K. withdrew $120.00</span>
+      <span>🟢 User Kevin O. withdrew 95,000 UGX ($25)</span>
+      <span>🟢 User Shamim N. withdrew $75.00</span>
+      <span>🟢 User Davis L. withdrew $200.00</span>
+      <!-- Duplicate set for seamless infinite loop -->
+      <span>🟢 User Bridan just withdrew $50.00</span>
+      <span>🟢 User Ronald M. withdrew 180,000 UGX ($48)</span>
+      <span>🟢 User Brenda K. withdrew $120.00</span>
+      <span>🟢 User Kevin O. withdrew 95,000 UGX ($25)</span>
+      <span>🟢 User Shamim N. withdrew $75.00</span>
+      <span>🟢 User Davis L. withdrew $200.00</span>
+    </div>
+  </div>
+
   <!-- Mobile Dropdown Menu -->
   <div id="mobileMenu" class="mobile-dropdown">
     <a href="#dashboard" onclick="toggleMenu()">Dashboard</a>
-    <a href="#interactive-chat" onclick="toggleMenu()">Foreigner Chat Task</a>
+    <a href="#interactive-chat" onclick="toggleMenu()">Foreigner Chat Tasks</a>
+    <a href="#music-tasks" onclick="toggleMenu()">Music Streaming Task</a>
+    <a href="#gaming-tasks" onclick="toggleMenu()">Gaming Demos</a>
     <a href="#how-to-earn" onclick="toggleMenu()">Ways to Earn</a>
     <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
     <a href="#faq" onclick="toggleMenu()">FAQ</a>
@@ -35,10 +86,10 @@
     <!-- Hero Section -->
     <section class="mobile-hero">
       <div class="badge">
-        <span class="dot-indicator"></span> Make Money Online Daily
+        <span class="dot-indicator"></span> Trusted by 50M+ Active Users Worldwide
       </div>
       <h1>Turn everyday actions into <span class="green-text">real money.</span></h1>
-      <p>Earn cash from watching videos, chatting with foreign partners, and simple tasks right from your phone.</p>
+      <p>Join over 50 million active users earning cash from streaming hit tracks by Vinka, Fik Fameica, Burna Boy & Justin Bieber, playing game demos, and completing over 50,000 tasks daily.</p>
       
       <div class="hero-buttons">
         <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" target="_blank" rel="noopener">Create Account & Activate</a>
@@ -60,10 +111,10 @@
               <strong>$520.25 (UGX 1,920,000)</strong>
             </div>
           </div>
-          <span class="live-pill">● LIVE</span>
+          <span class="live-pill">● 50,000+ TASKS READY</span>
         </div>
         <div class="preview-stats" style="margin-bottom: 12px;">
-          <div><small>Today's Tasks</small><strong>14 Completed</strong></div>
+          <div><small>Available Tasks</small><strong class="green-text">50,000+ Ready</strong></div>
           <div><small>Pending Payout</small><strong class="green-text">$45.00</strong></div>
         </div>
         <div style="font-size: 0.8rem; color: #9ca3af; text-align: center; background: var(--bg-accent); padding: 8px; border-radius: 6px;">
@@ -74,17 +125,23 @@
 
     <!-- Interactive 5-Message Foreigner Chat Task Section -->
     <section class="mobile-section" id="interactive-chat">
-      <div class="section-tag">LIVE TASK SIMULATION</div>
-      <h2>Chat with Foreign Partner</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 15px;">Complete 5 messages with Jessica to unlock your $3.00 payout.</p>
+      <div class="section-tag">LIVE TASK SIMULATION (18,000+ Available)</div>
+      <h2>Chat with Foreign Partners</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Select an online partner, complete 5 messages, and unlock your $3.00 payout.</p>
+
+      <!-- Partner Selection Tabs -->
+      <div style="display: flex; gap: 6px; margin-bottom: 12px; overflow-x: auto; padding-bottom: 4px;">
+        <button onclick="switchPartner('Jessica', '24 (New York)', 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100', 0)" class="partner-tab active-tab" id="tab-0" style="background: var(--color-primary); color: #030712; border: none; padding: 6px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; white-space: nowrap;">Jessica (NY)</button>
+        <button onclick="switchPartner('Lucas', '27 (London)', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100', 1)" class="partner-tab" id="tab-1" style="background: var(--bg-accent); color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 6px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer; white-space: nowrap;">Lucas (UK)</button>
+        <button onclick="switchPartner('Sophia', '22 (Sydney)', 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100', 2)" class="partner-tab" id="tab-2" style="background: var(--bg-accent); color: #fff; border: 1px solid rgba(255,255,255,0.1); padding: 6px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer; white-space: nowrap;">Sophia (Aus)</button>
+      </div>
 
       <div class="mobile-card" style="padding: 12px;">
-        <!-- Partner Header & Counter -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;">
           <div style="display: flex; align-items: center; gap: 10px;">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Jessica" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;">
+            <img id="partnerImg" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Partner" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;">
             <div>
-              <strong style="font-size: 13px; color: #fff; display: block;">Jessica, 24 (New York) <span style="color: #10b981; font-size: 10px;">● Online</span></strong>
+              <strong id="partnerName" style="font-size: 13px; color: #fff; display: block;">Jessica, 24 (New York) <span style="color: #10b981; font-size: 10px;">● Online</span></strong>
               <small style="color: #9ca3af; font-size: 10px;">Reward: $3.00 (10,000 UGX)</small>
             </div>
           </div>
@@ -93,25 +150,112 @@
           </div>
         </div>
 
-        <!-- Chat Feed -->
         <div id="chatFeed" style="height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; font-size: 0.8rem; padding-right: 4px;">
-          <div style="background: var(--bg-accent); padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start; color: #fff;">
+          <div id="initialGreeting" style="background: var(--bg-accent); padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start; color: #fff;">
             Hi there! Let's chat for a bit so you can complete your daily task. How is your day going? 😊
           </div>
         </div>
 
-        <!-- Chat Input Form -->
         <div id="chatInputArea" style="display: flex; gap: 6px;">
           <input type="text" id="chatInput" placeholder="Type your reply..." oninput="autoSaveDraft(this.value)" style="flex: 1; background: var(--bg-accent); border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; color: #fff; font-size: 0.85rem; outline: none;" />
           <button onclick="sendChatMessage()" style="background: var(--color-primary); color: #030712; border: none; padding: 0 14px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.85rem;">Send</button>
         </div>
 
-        <!-- Claim Box (Hidden Initially) -->
         <div id="claimBox" style="display: none; text-align: center; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.3); padding: 15px; border-radius: 10px; margin-top: 10px;">
           <div style="font-size: 24px; margin-bottom: 5px;">🎉</div>
           <h3 style="font-size: 15px; color: #fff; margin-bottom: 4px;">Task Completed Successfully!</h3>
           <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 12px;">You've earned <strong>$3.00</strong> from this chat session.</p>
           <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; text-align: center; font-size: 0.85rem;" target="_blank" rel="noopener">Claim $3.00 & Create Account</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Music Streaming Task Section: Vinka, Fik Fameica, Burna Boy, Justin Bieber -->
+    <section class="mobile-section" id="music-tasks">
+      <div class="section-tag">MUSIC TASK (15,000+ Available Songs)</div>
+      <h2>Stream & Earn on Top Hits</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Stream hit songs by Vinka, Fik Fameica, Burna Boy, and Justin Bieber to get paid instantly.</p>
+
+      <div class="mobile-stack">
+        <!-- Vinka Hit Track -->
+        <div class="mobile-card" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
+          <div>
+            <span style="font-size: 10px; color: #10b981; font-weight: 700; text-transform: uppercase;">Ugandan Dancehall Hit</span>
+            <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Vinka - Sirubala / Baila</h3>
+            <small style="color: #9ca3af; font-size: 11px;">Reward: 5,000 UGX ($1.35)</small>
+          </div>
+          <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="padding: 8px 12px; font-size: 12px;" target="_blank" rel="noopener">Stream Now</a>
+        </div>
+
+        <!-- Fik Fameica Latest Track -->
+        <div class="mobile-card" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
+          <div>
+            <span style="font-size: 10px; color: #10b981; font-weight: 700; text-transform: uppercase;">Latest Ugandan Release</span>
+            <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Fik Fameica - Sikiwa / Champion Gal</h3>
+            <small style="color: #9ca3af; font-size: 11px;">Reward: 5,000 UGX ($1.35)</small>
+          </div>
+          <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="padding: 8px 12px; font-size: 12px;" target="_blank" rel="noopener">Stream Now</a>
+        </div>
+
+        <!-- Burna Boy Track -->
+        <div class="mobile-card" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
+          <div>
+            <span style="font-size: 10px; color: #f59e0b; font-weight: 700; text-transform: uppercase;">Afrofusion Global Hit</span>
+            <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Burna Boy - Last Last / Dai Dai</h3>
+            <small style="color: #9ca3af; font-size: 11px;">Reward: $1.40 per stream loop</small>
+          </div>
+          <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="padding: 8px 12px; font-size: 12px;" target="_blank" rel="noopener">Stream Now</a>
+        </div>
+
+        <!-- Justin Bieber Track -->
+        <div class="mobile-card" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
+          <div>
+            <span style="font-size: 10px; color: #a855f7; font-weight: 700; text-transform: uppercase;">International Pop</span>
+            <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Justin Bieber - Peaches / Stay</h3>
+            <small style="color: #9ca3af; font-size: 11px;">Reward: $1.50 per stream loop</small>
+          </div>
+          <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="padding: 8px 12px; font-size: 12px;" target="_blank" rel="noopener">Stream Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Dream League Soccer (DLS) Demo Task Section -->
+    <section class="mobile-section" id="gaming-tasks">
+      <div class="section-tag">GAMING TASK (8,500 Available Demos)</div>
+      <h2>Dream League Soccer (DLS) Demo Task</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Test play the interactive DLS demo match simulation, score a goal, and collect your cash bounty.</p>
+
+      <div class="mobile-card" style="padding: 16px; background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(59,130,246,0.08)); border: 1px solid rgba(16,185,129,0.3);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div>
+            <span style="font-size: 10px; color: #3b82f6; font-weight: 700; text-transform: uppercase;">Interactive Demo</span>
+            <h3 style="font-size: 15px; color: #fff; margin: 2px 0;">DLS 2026 Penalty & Match Simulation</h3>
+            <small style="color: #10b981; font-size: 11px;">Reward: $2.50 (9,000 UGX)</small>
+          </div>
+          <div style="background: rgba(59,130,246,0.15); color: #3b82f6; padding: 6px 10px; border-radius: 8px; font-size: 0.75rem; font-weight: 700;">
+            ⚽ DLS Demo
+          </div>
+        </div>
+
+        <!-- DLS Interactive Demo Simulation Box -->
+        <div id="dlsGameArea" style="background: #030712; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 15px; text-align: center; margin-bottom: 12px;">
+          <div id="dlsStatus" style="font-size: 0.85rem; color: #d1d5db; margin-bottom: 10px;">
+            Match Simulator Ready: Take a penalty shot to complete the task demo!
+          </div>
+          <div style="font-size: 1.2rem; font-weight: 800; color: #10b981; margin-bottom: 12px;">
+            Score: <span id="userScore">0</span> - <span id="aiScore">0</span>
+          </div>
+          <div style="display: flex; gap: 8px; justify-content: center;" id="dlsButtonContainer">
+            <button onclick="playDlsShot('Left')" class="btn-secondary" style="font-size: 0.75rem; padding: 8px 12px;">Shoot Left 🥅</button>
+            <button onclick="playDlsShot('Center')" class="btn-secondary" style="font-size: 0.75rem; padding: 8px 12px;">Shoot Center 🎯</button>
+            <button onclick="playDlsShot('Right')" class="btn-secondary" style="font-size: 0.75rem; padding: 8px 12px;">Shoot Right ⚽</button>
+          </div>
+
+          <!-- DLS Claim Box (Hidden Initially) -->
+          <div id="dlsClaimBox" style="display: none; margin-top: 10px;">
+            <p style="color: #10b981; font-size: 0.85rem; font-weight: 700; margin-bottom: 8px;">🎉 Goal! DLS Demo Task Completed Successfully!</p>
+            <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; font-size: 0.85rem; text-align: center;" target="_blank" rel="noopener">Claim $2.50 & Register Account</a>
+          </div>
         </div>
       </div>
     </section>
@@ -125,7 +269,7 @@
         <div class="mobile-card">
           <div class="card-icon red-bg">&#9658;</div>
           <div class="card-content">
-            <h3>Watch Videos & Reels</h3>
+            <h3>Watch Videos & Reels <span style="font-size: 11px; color: #10b981; float: right;">18,500 Available</span></h3>
             <p>Earn cash rewards per video clip or promotional reel watched daily.</p>
             <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="task-action-btn" target="_blank" rel="noopener">Start Video Task</a>
           </div>
@@ -134,7 +278,7 @@
         <div class="mobile-card">
           <div class="card-icon green-bg">&#128197;</div>
           <div class="card-content">
-            <h3>Take Surveys & Offers</h3>
+            <h3>Take Surveys & Offers <span style="font-size: 11px; color: #10b981; float: right;">8,000 Available</span></h3>
             <p>Complete simple surveys and brand offers for instant wallet credit.</p>
             <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="task-action-btn" target="_blank" rel="noopener">Start Survey</a>
           </div>
@@ -143,7 +287,7 @@
         <div class="mobile-card">
           <div class="card-icon blue-bg" style="background: rgba(59,130,246,0.1); color: #3b82f6;">&#128101;</div>
           <div class="card-content">
-            <h3>Referral Program</h3>
+            <h3>Referral Program <span style="font-size: 11px; color: #3b82f6; float: right;">Unlimited</span></h3>
             <p>Invite friends using your unique link and earn instant commission per signup.</p>
             <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="task-action-btn" target="_blank" rel="noopener">Get Referral Link</a>
           </div>
@@ -154,7 +298,7 @@
     <!-- Testimonials Section -->
     <section class="mobile-section" id="testimonials">
       <div class="section-tag">TESTIMONIALS</div>
-      <h2>Loved by users & students</h2>
+      <h2>Loved by 50M+ users & students</h2>
 
       <div class="mobile-stack">
         <div class="mobile-card">
@@ -162,10 +306,10 @@
             <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100" alt="Ronald" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">
             <div>
               <strong style="font-size: 13px; color: #fff;">Ronald M.</strong>
-              <small style="color: #10b981; display: block; font-size: 11px;">Makerere University, Uganda</small>
+              <small style="color: #10b981; display: block; font-size: 11px;">Kampala, Uganda</small>
             </div>
           </div>
-          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"Doing chat and video tasks between university lectures has been a game changer for my pocket money!"</p>
+          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"Streaming Vinka's 'Sirubala' and playing the DLS demo tasks while accessing over 50k tasks is fantastic!"</p>
         </div>
 
         <div class="mobile-card">
@@ -176,7 +320,7 @@
               <small style="color: #3b82f6; display: block; font-size: 11px;">New York, USA</small>
             </div>
           </div>
-          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"An active platform with real global engagement and swift daily payouts."</p>
+          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"With over 50 million active users globally, EarnQube offers the best variety of digital task choices."</p>
         </div>
       </div>
     </section>
@@ -220,16 +364,46 @@
 
   </main>
 
-  <!-- Script for 5-Message Flow & Auto-Saving -->
+  <!-- Script for Chat & DLS Demo Game Simulation -->
   <script>
     let messageCount = 0;
+    let currentPartner = 'Jessica';
+
+    const partnerGreetings = {
+      'Jessica': "Hi there! Let's chat for a bit so you can complete your daily task. How is your day going? 😊",
+      'Lucas': "Hello! Ready to knock out our chat messages and secure our cash bonus today?",
+      'Sophia': "Hey! Good to connect with you. Let's finish our 5 quick chat replies together!"
+    };
+
+    const partnerRepliesMap = {
+      'Jessica': [
+        "That sounds really interesting! What else do you like doing online?",
+        "That's cool! I usually spend my time exploring new platforms like EarnQube.",
+        "Indeed! Making money straight from a phone feels incredible.",
+        "We are almost done with our chat target for today. One more reply!",
+        "Awesome! You have completed all 5 messages required for this session."
+      ],
+      'Lucas': [
+        "Brilliant! Music streaming and chatting are my favorite daily routines.",
+        "Exactly, EarnQube makes earning effortless for millions of active users.",
+        "True! Have you streamed Vinka or Burna Boy hits yet?",
+        "Almost finished with our chat target. Just one more reply to go!",
+        "Fantastic! You have successfully completed your chat session with Lucas."
+      ],
+      'Sophia': [
+        "Hey! Sunny day over here in Sydney. How are tasks going on your end?",
+        "That's awesome to hear! The payout system here is super swift.",
+        "I love how smooth the mobile interface works.",
+        "Only one more message left before you can claim your reward!",
+        "Awesome! You have completed all 5 messages with Sophia successfully."
+      ]
+    };
 
     function toggleMenu() {
       const menu = document.getElementById('mobileMenu');
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    // Load auto-saved draft on window load
     window.onload = function() {
       const savedDraft = localStorage.getItem('earnqube_chat_draft');
       if (savedDraft) {
@@ -241,14 +415,34 @@
       localStorage.setItem('earnqube_chat_draft', text);
     }
 
-    // Handle 5-message conversation sequence
-    const partnerReplies = [
-      "That sounds really interesting! What else do you like doing online?",
-      "That's cool! I usually spend my time exploring new platforms like EarnQube.",
-      "Indeed! Making money straight from a phone feels incredible.",
-      "We are almost done with our chat target for today. One more reply!",
-      "Awesome! You have completed all 5 messages required for this session."
-    ];
+    function switchPartner(name, info, imgUrl, index) {
+      currentPartner = name;
+      messageCount = 0;
+      document.getElementById('msgCount').innerText = messageCount;
+
+      document.getElementById('partnerName').innerHTML = `${name}, ${info} <span style="color: #10b981; font-size: 10px;">● Online</span>`;
+      document.getElementById('partnerImg').src = imgUrl;
+
+      for (let i = 0; i < 3; i++) {
+        const tab = document.getElementById('tab-' + i);
+        if (i === index) {
+          tab.style.background = 'var(--color-primary)';
+          tab.style.color = '#030712';
+          tab.style.fontWeight = '700';
+          tab.style.border = 'none';
+        } else {
+          tab.style.background = 'var(--bg-accent)';
+          tab.style.color = '#fff';
+          tab.style.fontWeight = '600';
+          tab.style.border = '1px solid rgba(255,255,255,0.1)';
+        }
+      }
+
+      const feed = document.getElementById('chatFeed');
+      feed.innerHTML = `<div style="background: var(--bg-accent); padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start; color: #fff;">${partnerGreetings[name]}</div>`;
+      document.getElementById('chatInputArea').style.display = 'flex';
+      document.getElementById('claimBox').style.display = 'none';
+    }
 
     function sendChatMessage() {
       const input = document.getElementById('chatInput');
@@ -256,14 +450,11 @@
       if (!text || messageCount >= 5) return;
 
       const feed = document.getElementById('chatFeed');
-
-      // Add user message bubble
       const userBubble = document.createElement('div');
       userBubble.style.cssText = "background: #10b981; color: #030712; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-end; font-weight: 600;";
       userBubble.innerText = text;
       feed.appendChild(userBubble);
 
-      // Clear input and storage draft
       input.value = '';
       localStorage.removeItem('earnqube_chat_draft');
       feed.scrollTop = feed.scrollHeight;
@@ -271,12 +462,13 @@
       messageCount++;
       document.getElementById('msgCount').innerText = messageCount;
 
+      const replies = partnerRepliesMap[currentPartner];
+
       if (messageCount >= 5) {
-        // Hide chat input field and show claim box after final reply
         setTimeout(() => {
           const replyBubble = document.createElement('div');
           replyBubble.style.cssText = "background: var(--bg-accent); color: #fff; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start;";
-          replyBubble.innerText = partnerReplies[4];
+          replyBubble.innerText = replies[4];
           feed.appendChild(replyBubble);
           feed.scrollTop = feed.scrollHeight;
 
@@ -284,21 +476,28 @@
           document.getElementById('claimBox').style.display = 'block';
         }, 800);
       } else {
-        // Trigger intermediate partner reply
         setTimeout(() => {
           const replyBubble = document.createElement('div');
           replyBubble.style.cssText = "background: var(--bg-accent); color: #fff; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start;";
-          replyBubble.innerText = partnerReplies[messageCount - 1];
+          replyBubble.innerText = replies[messageCount - 1];
           feed.appendChild(replyBubble);
           feed.scrollTop = feed.scrollHeight;
         }, 800);
       }
     }
+
+    // DLS Demo Interactive Simulation Logic
+    function playDlsShot(direction) {
+      document.getElementById('userScore').innerText = '1';
+      document.getElementById('dlsStatus').innerText = `You shot to the ${direction} and scored past the keeper! ⚽🔥`;
+      document.getElementById('dlsButtonContainer').style.display = 'none';
+      document.getElementById('dlsClaimBox').style.display = 'block';
+    }
   </script>
 
   <!-- Footer Section -->
   <footer class="mobile-footer">
-    <p>&copy; 2026 EarnQube.site. All Rights Reserved.</p>
+    <p>&copy; 2026 EarnQube.site. All Rights Reserved (50M+ Active Users | 50,000+ Tasks Ready).</p>
     <p style="margin-top: 5px; font-size: 0.75rem; color: #10b981;">WhatsApp: +256 761 537 538 | Email: support@earnqube.site</p>
   </footer>
 
