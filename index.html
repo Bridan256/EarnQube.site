@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>EarnQube.site | Live Media & Gaming Platform</title>
+  <title>EarnQube.site | Dashboard, Live Chat, Music & Support</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
@@ -34,6 +34,28 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -42,7 +64,7 @@
   <header class="mobile-navbar">
     <div class="logo">Earn<span>Qube</span></div>
     <div class="mobile-nav-right">
-      <a href="https://stateflix.com/user/login.php" class="nav-icon-btn" target="_blank" rel="noopener">&#128100;</a>
+      <a href="#dashboard" class="nav-icon-btn">&#128100;</a>
       <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     </div>
   </header>
@@ -61,11 +83,19 @@
 
   <!-- Mobile Dropdown Menu -->
   <div id="mobileMenu" class="mobile-dropdown">
-    <a href="#dashboard" onclick="toggleMenu()">Dashboard</a>
-    <a href="#music-tasks" onclick="toggleMenu()">40-Sec Music Streaming</a>
-    <a href="#gaming-tasks" onclick="toggleMenu()">Live DLS 2026 Match & Commentator</a>
-    <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="menu-btn-join" target="_blank" rel="noopener">Join Now / Register</a>
+    <a href="#dashboard" onclick="toggleMenu()">Dashboard Overview</a>
+    <a href="#chat-section" onclick="toggleMenu()">Foreign Chat Hub</a>
+    <a href="#music-tasks" onclick="toggleMenu()">Music Streaming Task</a>
+    <a href="#gaming-tasks" onclick="toggleMenu()">Live DLS Match & Commentator</a>
+    <a href="https://wa.me/256761537538?text=Hello%20EarnQube%20Support,%20I%20need%20help%20with%20my%20account" target="_blank" rel="noopener">WhatsApp Support (+256 761 537538)</a>
+    <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+    <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="menu-btn-join" target="_blank" rel="noopener">Join / Register Now</a>
   </div>
+
+  <!-- Floating WhatsApp Chat Widget (Connected to your number) -->
+  <a href="https://wa.me/256761537538?text=Hello%20EarnQube%20Support,%20I%20need%20help%20with%20my%20account" class="whatsapp-float" target="_blank" rel="noopener">
+    <span style="font-size: 1.1rem;">💬</span> WhatsApp Support
+  </a>
 
   <!-- Main Mobile Container -->
   <main class="mobile-container">
@@ -73,21 +103,92 @@
     <!-- Hero Section -->
     <section class="mobile-hero">
       <div class="badge">
-        <span class="dot-indicator"></span> Live Media & Gaming Platform
+        <span class="dot-indicator"></span> Verified Earning & Media Platform
       </div>
-      <h1>Stream music with audio & watch <span class="green-text">live matches.</span></h1>
-      <p>Listen to actual hit songs for 40 seconds, enjoy live sports commentary, and watch real player shooting action.</p>
+      <h1>Stream music, chat with foreigners & get <span class="green-text">live support.</span></h1>
+      <p>Access your dashboard, chat with international partners, stream hit songs, and connect directly with 24/7 WhatsApp support.</p>
       
       <div class="hero-buttons">
-        <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" target="_blank" rel="noopener">Create Account & Activate</a>
+        <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" target="_blank" rel="noopener">Get Started & Register</a>
       </div>
     </section>
 
-    <!-- In-Platform 40-Second Music Task with Real Audio Elements -->
+    <!-- 1. USER DASHBOARD PANEL -->
+    <section class="mobile-section" id="dashboard">
+      <div class="section-tag">ACCOUNT DASHBOARD</div>
+      <h2>Member Overview</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Track your live earnings, active referral link, and completed tasks summary.</p>
+
+      <div class="mobile-card" style="background: linear-gradient(135deg, rgba(31,41,55,0.9), rgba(17,24,39,0.9)); border: 1px solid rgba(16,185,129,0.3); padding: 16px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+          <div>
+            <span style="font-size: 11px; color: #9ca3af;">Welcome back,</span>
+            <h3 style="font-size: 16px; color: #fff; margin: 0;">EarnQube Member</h3>
+          </div>
+          <span style="font-size: 10px; background: rgba(16,185,129,0.2); color: #10b981; padding: 4px 8px; border-radius: 4px; font-weight: 700;">🟢 Account Active</span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
+          <div style="background: rgba(3,7,18,0.6); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+            <span style="font-size: 10px; color: #9ca3af; display: block;">Total Balance</span>
+            <span style="font-size: 16px; font-weight: 800; color: #10b981;">18,500 UGX</span>
+            <span style="font-size: 9px; color: #f59e0b; display: block;">($5.00 USD)</span>
+          </div>
+          <div style="background: rgba(3,7,18,0.6); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
+            <span style="font-size: 10px; color: #9ca3af; display: block;">Tasks Completed</span>
+            <span style="font-size: 16px; font-weight: 800; color: #fff;">14 Sessions</span>
+            <span style="font-size: 9px; color: #10b981; display: block;">Today: 3 Tasks</span>
+          </div>
+        </div>
+
+        <div style="background: rgba(16, 185, 129, 0.08); padding: 10px; border-radius: 8px; margin-bottom: 12px; font-size: 0.8rem;">
+          <span style="color: #10b981; font-weight: 700; display: block; margin-bottom: 2px;">🔗 Your Referral Link:</span>
+          <input type="text" readonly value="https://stateflix.com/user/register.php?ref=Earnqubesite" style="width: 100%; background: #030712; border: 1px solid #374151; color: #d1d5db; padding: 6px; font-size: 0.75rem; border-radius: 4px;" />
+        </div>
+
+        <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; text-align: center; font-size: 0.8rem;" target="_blank" rel="noopener">Withdraw Earnings & Open Dashboard</a>
+      </div>
+    </section>
+
+    <!-- 2. CHAT WITH FOREIGNERS SECTION -->
+    <section class="mobile-section" id="chat-section">
+      <div class="section-tag">INTERNATIONAL ENGAGEMENT</div>
+      <h2>Chat with Online Foreign Partners</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Connect with global members, exchange messages, and earn chat session bonuses.</p>
+
+      <div class="mobile-card" style="padding: 14px; background: #030712; border: 1px solid rgba(59,130,246,0.3);">
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #1f2937; padding-bottom: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 32px; height: 32px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 14px;">🌎</div>
+            <div>
+              <h3 style="font-size: 13px; color: #fff; margin: 0;">Lucas Martin (USA)</h3>
+              <span style="font-size: 10px; color: #10b981;">● Online Now (Active Partner)</span>
+            </div>
+          </div>
+          <span style="font-size: 11px; color: #f59e0b; font-weight: 700;">Reward: 10,000 UGX</span>
+        </div>
+
+        <div style="background: #111827; padding: 10px; border-radius: 8px; height: 110px; overflow-y: auto; font-size: 0.75rem; margin-bottom: 10px; display: flex; flex-direction: column; gap: 6px;">
+          <div style="background: #1f2937; padding: 6px 10px; border-radius: 6px; max-width: 80%; align-self: flex-start; color: #e5e7eb;">
+            Hello from New York! How is your day going with the tasks on EarnQube?
+          </div>
+          <div style="background: #10b981; color: #030712; padding: 6px 10px; border-radius: 6px; max-width: 80%; align-self: flex-end; font-weight: 500;">
+            Hi Lucas! Going great, just finished listening to music and testing the platform.
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 6px;">
+          <input type="text" id="chatMsgInput" placeholder="Type a message to earn..." style="flex: 1; background: #1f2937; border: 1px solid #374151; color: #fff; padding: 8px; font-size: 0.8rem; border-radius: 6px;" />
+          <button onclick="sendChatMessage()" class="btn-primary" style="padding: 8px 12px; font-size: 0.8rem;">Send</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MUSIC STREAMING TASK -->
     <section class="mobile-section" id="music-tasks">
-      <div class="section-tag">MUSIC TASK (Audio Streaming & Claim)</div>
+      <div class="section-tag">MUSIC STREAMING (Real Audio & Hits)</div>
       <h2>Listen to Songs for 40 Seconds</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Press play on any song below. The built-in audio player will stream the track, and the claim button will unlock after 40 seconds.</p>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Play the actual song video or audio player below to stream real music tracks and unlock your reward.</p>
 
       <div class="mobile-stack">
         <!-- Song 1: Harry Styles - As It Was -->
@@ -100,13 +201,14 @@
             <span style="font-size: 11px; color: #10b981; font-weight: 700;">Reward: 5,000 UGX</span>
           </div>
 
-          <!-- Hidden HTML5 Audio Element for Harry Styles -->
-          <audio id="audioElement-0" src="https://actions.google.com/sounds/v1/ambiences/coffee_shop.ogg" preload="none"></audio>
-          
-          <div id="playerBox-0" style="margin-top: 10px;">
-            <button onclick="startAudioMusicTask(0, 'Harry Styles - As It Was')" id="playBtn-0" class="btn-primary" style="width: 100%; font-size: 0.8rem; padding: 8px;">▶ Play Song & Start 40s Task</button>
+          <div style="position: relative; width: 100%; height: 160px; border-radius: 6px; overflow: hidden; margin-bottom: 10px; background: #000;">
+            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/H5v3kku4y6Q?enablejsapi=1" title="Harry Styles - As It Was" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block;"></iframe>
+          </div>
+
+          <div id="playerBox-0">
+            <button onclick="startMusicTask(0)" id="playBtn-0" class="btn-primary" style="width: 100%; font-size: 0.8rem; padding: 8px;">▶ Start 40s Task & Verify Stream</button>
             <div id="timerBox-0" style="display: none; text-align: center; font-size: 0.85rem; color: #f59e0b; font-weight: 700; padding: 6px; background: rgba(245, 158, 11, 0.1); border-radius: 6px;">
-              🎵 Streaming Audio... Time remaining: <span id="countdown-0">40</span>s
+              🎵 Streaming Music... Time remaining: <span id="countdown-0">40</span>s
             </div>
             <div id="musicClaimBox-0" style="display: none; margin-top: 8px;">
               <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; text-align: center; font-size: 0.8rem; background: #10b981; color: #030712;" target="_blank" rel="noopener">🎁 Claim Reward & Register Account</a>
@@ -124,13 +226,14 @@
             <span style="font-size: 11px; color: #10b981; font-weight: 700;">Reward: $1.50</span>
           </div>
 
-          <!-- Hidden HTML5 Audio Element for The Weeknd -->
-          <audio id="audioElement-1" src="https://actions.google.com/sounds/v1/science_fiction/electronic_hum.ogg" preload="none"></audio>
-          
-          <div id="playerBox-1" style="margin-top: 10px;">
-            <button onclick="startAudioMusicTask(1, 'The Weeknd - Blinding Lights')" id="playBtn-1" class="btn-primary" style="width: 100%; font-size: 0.8rem; padding: 8px;">▶ Play Song & Start 40s Task</button>
+          <div style="position: relative; width: 100%; height: 160px; border-radius: 6px; overflow: hidden; margin-bottom: 10px; background: #000;">
+            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/4NRXx6U8ABQ?enablejsapi=1" title="The Weeknd - Blinding Lights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block;"></iframe>
+          </div>
+
+          <div id="playerBox-1">
+            <button onclick="startMusicTask(1)" id="playBtn-1" class="btn-primary" style="width: 100%; font-size: 0.8rem; padding: 8px;">▶ Start 40s Task & Verify Stream</button>
             <div id="timerBox-1" style="display: none; text-align: center; font-size: 0.85rem; color: #f59e0b; font-weight: 700; padding: 6px; background: rgba(245, 158, 11, 0.1); border-radius: 6px;">
-              🎵 Streaming Audio... Time remaining: <span id="countdown-1">40</span>s
+              🎵 Streaming Music... Time remaining: <span id="countdown-1">40</span>s
             </div>
             <div id="musicClaimBox-1" style="display: none; margin-top: 8px;">
               <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; text-align: center; font-size: 0.8rem; background: #10b981; color: #030712;" target="_blank" rel="noopener">🎁 Claim Reward & Register Account</a>
@@ -140,24 +243,22 @@
       </div>
     </section>
 
-    <!-- Live DLS 2026 Match Task with Commentator Audio & Running Players -->
+    <!-- 4. LIVE MATCH & COMMENTATOR SECTION -->
     <section class="mobile-section" id="gaming-tasks">
       <div class="section-tag">LIVE STADIUM MATCH & COMMENTATOR</div>
       <h2>Real Match, Running Players & Commentator</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Experience live sports commentary audio, watch players run across a clear stadium pitch, and shoot to score!</p>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Watch players run across the pitch canvas, listen to live match commentary, and shoot to score goals!</p>
 
       <div class="mobile-card" style="padding: 16px; background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(59,130,246,0.08)); border: 1px solid rgba(16,185,129,0.3);">
         
-        <!-- Choose Player -->
         <div style="margin-bottom: 10px;">
           <h3 style="font-size: 14px; color: #fff; margin-bottom: 6px;">Select Star Forward:</h3>
-          <div style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px;">
-            <button onclick="setCaptain('Kylian Mbappé')" class="btn-secondary" style="font-size: 0.75rem; padding: 6px 10px; white-space: nowrap;">⭐ Mbappé (ST)</button>
-            <button onclick="setCaptain('Erling Haaland')" class="btn-secondary" style="font-size: 0.75rem; padding: 6px 10px; white-space: nowrap;">⭐ Haaland (ST)</button>
+          <div style="display: flex; gap: 6px;">
+            <button onclick="setCaptain('Kylian Mbappé')" class="btn-secondary" style="font-size: 0.75rem; padding: 6px 10px;">⭐ Mbappé (ST)</button>
+            <button onclick="setCaptain('Erling Haaland')" class="btn-secondary" style="font-size: 0.75rem; padding: 6px 10px;">⭐ Haaland (ST)</button>
           </div>
         </div>
 
-        <!-- Live Match Canvas Console -->
         <div style="background: #030712; border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; text-align: center;">
           
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; font-size: 0.8rem; font-weight: 700; color: #fff;">
@@ -166,22 +267,19 @@
             <span>RIVAL FC</span>
           </div>
 
-          <!-- Stadium Graphic Canvas with Running Animation -->
-          <div style="position: relative; width: 100%; height: 200px; margin-bottom: 10px; border-radius: 6px; overflow: hidden; border: 2px solid #10b981;">
-            <canvas id="liveMatchCanvas" width="340" height="200" style="width: 100%; height: 100%; background: #065f46; display: block;"></canvas>
-            <div style="position: absolute; bottom: 4px; left: 4px; background: rgba(0,0,0,0.7); color: #10b981; padding: 2px 6px; font-size: 9px; border-radius: 4px; font-weight: 700;">🔊 Live Commentator & Crowd Active</div>
+          <div style="position: relative; width: 100%; height: 180px; margin-bottom: 10px; border-radius: 6px; overflow: hidden; border: 2px solid #10b981;">
+            <canvas id="liveMatchCanvas" width="340" height="180" style="width: 100%; height: 100%; background: #065f46; display: block;"></canvas>
+            <div style="position: absolute; bottom: 4px; left: 4px; background: rgba(0,0,0,0.7); color: #10b981; padding: 2px 6px; font-size: 9px; border-radius: 4px; font-weight: 700;">🔊 Live Commentator Active</div>
           </div>
 
           <div style="font-size: 1.3rem; font-weight: 800; color: #10b981; margin-bottom: 6px;">
             <span id="scoreUser">0</span> - <span id="scoreAi">0</span>
           </div>
 
-          <!-- Live Commentary Text Box -->
           <div id="commentaryBox" style="font-size: 0.8rem; color: #f3f4f6; background: rgba(31,41,55,0.8); padding: 8px; border-radius: 6px; margin-bottom: 10px; min-height: 35px; text-align: left; border-left: 3px solid #10b981;">
-            🎙️ Commentator: "Welcome fans! Teams are stepping onto the pitch. Press Start Live Match to begin!"
+            🎙️ Commentator: "Teams are stepping onto the pitch. Press Start Live Match to begin!"
           </div>
 
-          <!-- Controls -->
           <div id="matchControlsStart">
             <button onclick="startLiveMatchWithCommentator()" class="btn-primary" style="width: 100%; font-size: 0.8rem; padding: 8px;">▶ Start Live Match & Audio Commentator</button>
           </div>
@@ -191,13 +289,51 @@
             <button onclick="performMatchShot('dribble')" class="btn-secondary" style="font-size: 0.75rem; padding: 6px 10px;">🏃‍♂️ Sprint Past Defender</button>
           </div>
 
-          <!-- Claim Box -->
           <div id="matchClaimBox" style="display: none; margin-top: 10px;">
-            <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; font-size: 0.8rem; text-align: center;" target="_blank" rel="noopener">🎁 Claim $3.50 Match Reward & Register Account</a>
+            <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; font-size: 0.8rem; text-align: center;" target="_blank" rel="noopener">🎁 Claim Match Reward & Register Account</a>
           </div>
 
         </div>
 
+      </div>
+    </section>
+
+    <!-- 5. WHATSAPP & CUSTOMER SUPPORT SECTION -->
+    <section class="mobile-section" id="support-section">
+      <div class="section-tag">24/7 CUSTOMER ASSISTANCE</div>
+      <h2>Need Help? Contact Support</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Get instant assistance with withdrawals, deposits, task activation, and account queries via WhatsApp.</p>
+
+      <div class="mobile-card" style="padding: 16px; background: rgba(31,41,55,0.6); text-align: center; border: 1px solid rgba(37, 211, 102, 0.4);">
+        <div style="font-size: 2rem; margin-bottom: 8px;">💬</div>
+        <h3 style="font-size: 15px; color: #fff; margin-bottom: 6px;">Official WhatsApp Help Desk</h3>
+        <p style="font-size: 0.8rem; color: #d1d5db; margin-bottom: 6px;">Chat directly with support at <strong>+256 761 537538</strong>.</p>
+        <p style="font-size: 0.75rem; color: #9ca3af; margin-bottom: 14px;">Online 24/7 to resolve any issue instantly.</p>
+        <a href="https://wa.me/256761537538?text=Hello%20EarnQube%20Support,%20I%20need%20help%20with%20my%20account" class="btn-primary" style="display: inline-block; background: #25d366; color: #fff; text-decoration: none; padding: 10px 20px; font-size: 0.85rem;" target="_blank" rel="noopener">🟢 Chat on WhatsApp Now</a>
+      </div>
+    </section>
+
+    <!-- 6. MEMBER TESTIMONIALS SECTION -->
+    <section class="mobile-section" id="testimonials">
+      <div class="section-tag">COMMUNITY FEEDBACK</div>
+      <h2>What Members Say</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Real feedback from active participants on EarnQube.</p>
+
+      <div class="mobile-stack">
+        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
+          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“I earned my first payout in under 24 hours. The tasks are easy and support responds instantly on WhatsApp.”</p>
+          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Sarah K.</span>
+        </div>
+
+        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
+          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“Great platform. I can complete a few tasks between classes, stream music, and cash out fast.”</p>
+          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Daniel M.</span>
+        </div>
+
+        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
+          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“24/7 WhatsApp support is excellent, and I appreciate the step-by-step task guidance.”</p>
+          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Amina R.</span>
+        </div>
       </div>
     </section>
 
@@ -209,14 +345,33 @@
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    // Audio-Based Music Task
-    function startAudioMusicTask(index, songName) {
+    // Foreign Chat Simulation Logic
+    function sendChatMessage() {
+      const input = document.getElementById('chatMsgInput');
+      if (!input.value.trim()) return;
+      
+      const chatBox = input.parentElement.previousElementSibling;
+      const userMsg = document.createElement('div');
+      userMsg.style.cssText = "background: #10b981; color: #030712; padding: 6px 10px; border-radius: 6px; max-width: 80%; align-self: flex-end; font-weight: 500;";
+      userMsg.innerText = input.value;
+      chatBox.appendChild(userMsg);
+      
+      input.value = '';
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      setTimeout(() => {
+        const replyMsg = document.createElement('div');
+        replyMsg.style.cssText = "background: #1f2937; padding: 6px 10px; border-radius: 6px; max-width: 80%; align-self: flex-start; color: #e5e7eb;";
+        replyMsg.innerText = "That's awesome! Keep up the great engagement on EarnQube.";
+        chatBox.appendChild(replyMsg);
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }, 1000);
+    }
+
+    // Music Task Timer Logic
+    function startMusicTask(index) {
       document.getElementById('playBtn-' + index).style.display = 'none';
       document.getElementById('timerBox-' + index).style.display = 'block';
-
-      // Start actual HTML5 audio stream
-      const audio = document.getElementById('audioElement-' + index);
-      audio.play().catch(e => console.log("Audio autoplay prevented by browser policy", e));
 
       let timeLeft = 40;
       const countdownEl = document.getElementById('countdown-' + index);
@@ -227,20 +382,18 @@
 
         if (timeLeft <= 0) {
           clearInterval(timer);
-          audio.pause();
           document.getElementById('timerBox-' + index).style.display = 'none';
           document.getElementById('musicClaimBox-' + index).style.display = 'block';
         }
       }, 1000);
     }
 
-    // Live Match & Commentator Logic
+    // Live Match Canvas & Commentator Logic
     let currentStar = 'Kylian Mbappé';
     let canvas, ctx;
     let matchActive = false;
     let playerX = 60;
     let ballX = 75;
-    let ballY = 100;
     let isShooting = false;
     let scoreU = 0;
     let scoreA = 0;
@@ -260,31 +413,26 @@
       canvas = document.getElementById('liveMatchCanvas');
       if (!canvas) return;
       ctx = canvas.getContext('2d');
-      drawPitchScene(playerX, 100, ballX, ballY);
+      drawPitchScene(playerX, 90, ballX, 90);
     }
 
     function drawPitchScene(pX, pY, bX, bY) {
       if (!ctx) return;
-      // Turf
       ctx.fillStyle = '#059669';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Lines
       ctx.strokeStyle = 'rgba(255,255,255,0.7)';
       ctx.lineWidth = 2;
-      ctx.strokeRect(0, 30, 50, 140);
-      ctx.strokeRect(canvas.width - 50, 30, 50, 140);
+      ctx.strokeRect(0, 25, 45, 130);
+      ctx.strokeRect(canvas.width - 45, 25, 45, 130);
       ctx.beginPath();
-      ctx.arc(canvas.width / 2, canvas.height / 2, 35, 0, Math.PI * 2);
+      ctx.arc(canvas.width / 2, canvas.height / 2, 30, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Goal Nets
-      ctx.strokeRect(canvas.width - 15, 75, 15, 50);
-
-      // Running Player (Blue/Green Jersey Avatar with Name)
+      // Running Player Avatar
       ctx.fillStyle = '#10b981';
       ctx.beginPath();
-      ctx.arc(pX, pY, 14, 0, Math.PI * 2);
+      ctx.arc(pX, pY, 13, 0, Math.PI * 2);
       ctx.fill();
       ctx.strokeStyle = '#fff';
       ctx.lineWidth = 2;
@@ -293,9 +441,9 @@
       ctx.fillStyle = '#ffffff';
       ctx.font = 'bold 9px Inter';
       ctx.textAlign = 'center';
-      ctx.fillText(currentStar.split(' ')[0], pX, pY + 24);
+      ctx.fillText(currentStar.split(' ')[0], pX, pY + 23);
 
-      // Soccer Ball
+      // Ball
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();
       ctx.arc(bX, bY, 5, 0, Math.PI * 2);
@@ -309,7 +457,7 @@
       matchActive = true;
       gameSeconds = 0;
 
-      updateCommentary(`🎙️ "And we are underway! ${currentStar} takes control of the ball in midfield and starts a fast run!"`);
+      updateCommentary(`🎙️ "And we are underway! ${currentStar} takes control of the ball and starts a fast attack!"`);
 
       matchTimerVar = setInterval(() => {
         gameSeconds++;
@@ -317,20 +465,17 @@
         let secs = gameSeconds % 60;
         document.getElementById('matchClock').innerText = `⏳ 0${mins}:${secs < 10 ? '0' : ''}${secs}`;
 
-        // Running player movement animation loop
         if (!isShooting) {
-          playerX += 0.8;
-          ballX = playerX + 15;
-          if (playerX > 220) playerX = 80;
-          drawPitchScene(playerX, 100, ballX, 100);
+          playerX += 0.7;
+          ballX = playerX + 14;
+          if (playerX > 210) playerX = 70;
+          drawPitchScene(playerX, 90, ballX, 90);
         }
 
-        if (gameSeconds === 30) {
-          updateCommentary(`🎙️ "Wonderful passing sequence by the squad! Looking for an opening!"`);
-        } else if (gameSeconds === 60) {
+        if (gameSeconds === 60) {
           scoreA++;
           document.getElementById('scoreAi').innerText = scoreA;
-          updateCommentary(`🎙️ "Counter attack by Rival FC... and they score! 0-1! ${currentStar} needs to respond!"`);
+          updateCommentary(`🎙️ "Rival team counter-attacks... and scores! 0-1! ${currentStar} needs an equalizer!"`);
         } else if (gameSeconds >= 120) {
           endMatch();
         }
@@ -346,33 +491,32 @@
 
       if (action === 'shoot') {
         isShooting = true;
-        updateCommentary(`🎙️ "${currentStar} winds up for a thunderous strike from outside the box... IT'S IN THE BACK OF THE NET! GOAL!!"`);
+        updateCommentary(`🎙️ "${currentStar} unleashes a powerful shot toward the net... IT'S A GOAL!!"`);
         
         scoreU++;
         document.getElementById('scoreUser').innerText = scoreU;
 
-        // Ball animation towards goal net
         let bx = ballX;
-        let by = 100;
+        let by = 90;
         const anim = setInterval(() => {
-          bx += 8;
-          by += (105 - by) * 0.1;
-          drawPitchScene(playerX, 100, bx, by);
+          bx += 7;
+          by += (90 - by) * 0.1;
+          drawPitchScene(playerX, 90, bx, by);
 
-          if (bx >= 315) {
+          if (bx >= 310) {
             clearInterval(anim);
-            isShooting = false;
+            isShoprints = false;
             setTimeout(() => {
-              playerX = 80;
-              drawPitchScene(playerX, 100, playerX + 15, 100);
+              playerX = 70;
+              drawPitchScene(playerX, 90, playerX + 14, 90);
             }, 500);
           }
         }, 30);
 
       } else {
-        updateCommentary(`🎙️ "${currentStar} puts on a brilliant display of skill, sprinting past two defenders down the flank!"`);
-        playerX += 30;
-        drawPitchScene(playerX, 100, playerX + 15, 100);
+        updateCommentary(`🎙️ "${currentStar} dazzles with quick feet, dribbling past defenders down the wing!"`);
+        playerX += 25;
+        drawPitchScene(playerX, 90, playerX + 14, 90);
       }
     }
 
@@ -380,7 +524,7 @@
       matchActive = false;
       clearInterval(matchTimerVar);
       document.getElementById('matchControlsAction').style.display = 'none';
-      updateCommentary(`🎙️ "Full Time whistle blows! What a thrilling match! Task successfully completed."`);
+      updateCommentary(`🎙️ "Full Time whistle blows! What an incredible match!"`);
       document.getElementById('matchClaimBox').style.display = 'block';
     }
   </script>
