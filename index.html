@@ -71,7 +71,7 @@
   <div id="mobileMenu" class="mobile-dropdown">
     <a href="#dashboard" onclick="toggleMenu()">Dashboard</a>
     <a href="#interactive-chat" onclick="toggleMenu()">Foreigner Chat Tasks</a>
-    <a href="#music-tasks" onclick="toggleMenu()">Music Streaming Task</a>
+    <a href="#music-tasks" onclick="toggleMenu()">In-Platform Music Task</a>
     <a href="#gaming-tasks" onclick="toggleMenu()">DLS 2026 Match Task</a>
     <a href="#how-to-earn" onclick="toggleMenu()">Ways to Earn</a>
     <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
@@ -89,7 +89,7 @@
         <span class="dot-indicator"></span> Trusted by 50M+ Active Users Worldwide
       </div>
       <h1>Turn everyday actions into <span class="green-text">real money.</span></h1>
-      <p>Join over 50 million active users earning cash from streaming exact hit songs for 40 seconds, playing DLS 2026 in a real stadium canvas simulator with crowd audio, and chatting with 3 online partners.</p>
+      <p>Stream hit songs directly inside the platform without leaving your dashboard, play DLS 2026 matches with stadium audio, and complete foreign chat tasks.</p>
       
       <div class="hero-buttons">
         <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" target="_blank" rel="noopener">Create Account & Activate</a>
@@ -170,56 +170,39 @@
       </div>
     </section>
 
-    <!-- Music Streaming Task Section: Real Official Song Players -->
+    <!-- In-Platform Music Task Section: Spotify & Audiomack Direct Players -->
     <section class="mobile-section" id="music-tasks">
-      <div class="section-tag">MUSIC TASK (15,000+ Available Songs)</div>
-      <h2>Stream Real Hits for 40 Seconds</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Tap any song to play the exact official track for 40 seconds and earn cash rewards.</p>
+      <div class="section-tag">MUSIC TASK (In-Platform Streaming)</div>
+      <h2>Play Hits Directly on Platform</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Stream tracks right here inside your dashboard to complete your 40-second task without opening outside apps.</p>
 
       <div class="mobile-stack">
-        <!-- Vinka Hit Track -->
-        <div class="mobile-card" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
-          <div>
-            <span style="font-size: 10px; color: #10b981; font-weight: 700; text-transform: uppercase;">Ugandan Dancehall Hit</span>
-            <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Vinka - Baila / Sirubala</h3>
-            <small style="color: #9ca3af; font-size: 11px;">Reward: 5,000 UGX ($1.35)</small>
+        <!-- Track 1: Spotify Embed Player -->
+        <div class="mobile-card" style="padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div>
+              <span style="font-size: 10px; color: #10b981; font-weight: 700; text-transform: uppercase;">Global Hit</span>
+              <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Spotify In-Platform Player</h3>
+            </div>
+            <span style="font-size: 11px; color: #10b981; font-weight: 700;">Reward: 5,000 UGX</span>
           </div>
-          <button onclick="playOfficialSong('Vinka - Baila', 'L_3j94N9w40')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
+          <!-- Embedded Spotify Player Widget (Stays 100% inside platform) -->
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3n3Ppam7vgaVa1iaRUc9Lp?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
 
-        <!-- Fik Fameica Latest Track -->
-        <div class="mobile-card" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
-          <div>
-            <span style="font-size: 10px; color: #10b981; font-weight: 700; text-transform: uppercase;">Latest Ugandan Release</span>
-            <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Fik Fameica - Sikiwa</h3>
-            <small style="color: #9ca3af; font-size: 11px;">Reward: 5,000 UGX ($1.35)</small>
+        <!-- Track 2: Audiomack Embed Player -->
+        <div class="mobile-card" style="padding: 12px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <div>
+              <span style="font-size: 10px; color: #f59e0b; font-weight: 700; text-transform: uppercase;">Afrobeat Track</span>
+              <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Audiomack In-Platform Player</h3>
+            </div>
+            <span style="font-size: 11px; color: #10b981; font-weight: 700;">Reward: $1.40</span>
           </div>
-          <button onclick="playOfficialSong('Fik Fameica - Sikiwa', '3JZ_D3ELwOQ')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
-        </div>
-
-        <!-- Burna Boy Track -->
-        <div class="mobile-card" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
-          <div>
-            <span style="font-size: 10px; color: #f59e0b; font-weight: 700; text-transform: uppercase;">Afrofusion Global Hit</span>
-            <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Burna Boy - Last Last</h3>
-            <small style="color: #9ca3af; font-size: 11px;">Reward: $1.40 per stream loop</small>
-          </div>
-          <button onclick="playOfficialSong('Burna Boy - Last Last', 'WcVN1gqX0_g')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
-        </div>
-
-        <!-- Justin Bieber Track -->
-        <div class="mobile-card" style="display: flex; justify-content: space-between; align-items: center; padding: 12px 16px;">
-          <div>
-            <span style="font-size: 10px; color: #a855f7; font-weight: 700; text-transform: uppercase;">International Pop</span>
-            <h3 style="font-size: 14px; color: #fff; margin: 2px 0;">Justin Bieber - Peaches</h3>
-            <small style="color: #9ca3af; font-size: 11px;">Reward: $1.50 per stream loop</small>
-          </div>
-          <button onclick="playOfficialSong('Justin Bieber - Peaches', '4I93uQzF59w')" class="btn-primary" style="padding: 8px 12px; font-size: 12px; cursor: pointer;">▶ Play 40s</button>
+          <!-- Embedded Audiomack Player Widget (Stays 100% inside platform) -->
+          <iframe src="https://audiomack.com/embed/burnaboy/song/last-last?background=1" scrolling="no" width="100%" height="80" scrolling="no" frameborder="0" style="border-radius: 12px;" allowfullscreen></iframe>
         </div>
       </div>
-      <div id="songTimerDisplay" style="text-align: center; font-size: 0.85rem; color: #10b981; margin-top: 10px; font-weight: 700;"></div>
-      <!-- Hidden YouTube Player Iframe -->
-      <div id="youtubePlayerContainer" style="display:none; margin-top: 10px; text-align: center;"></div>
     </section>
 
     <!-- Real Dream League Soccer 2026 Canvas Stadium Simulation with Crowd Audio -->
@@ -345,7 +328,7 @@
               <small style="color: #10b981; display: block; font-size: 11px;">Kampala, Uganda</small>
             </div>
           </div>
-          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"Listening to Justin Bieber's official track and hearing stadium fans roar during DLS matches is amazing!"</p>
+          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"Listening to official tracks right inside the platform without leaving is super convenient!"</p>
         </div>
 
         <div class="mobile-card">
@@ -356,7 +339,7 @@
               <small style="color: #3b82f6; display: block; font-size: 11px;">New York, USA</small>
             </div>
           </div>
-          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"With over 50 million active users globally, EarnQube offers the best variety of digital task choices."</p>
+          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"With over 50 million active users globally, EarnQube offers the best in-platform features."</p>
         </div>
       </div>
     </section>
@@ -400,7 +383,7 @@
 
   </main>
 
-  <!-- Script for Chat, Official YouTube Song Players, and Stadium Fan Audio -->
+  <!-- Script for Chat and Stadium Canvas Simulation -->
   <script>
     let messageCount = 0;
     let currentPartner = 'Jessica';
@@ -423,7 +406,7 @@
       'Lucas': [
         "Brilliant! Music streaming and chatting are my favorite daily routines.",
         "Exactly, EarnQube makes earning effortless for millions of active users.",
-        "True! Have you streamed Vinka or Burna Boy hits yet?",
+        "True! Have you streamed Spotify and Audiomack tracks inside your dashboard yet?",
         "Almost finished with our chat target. Just one more reply to go!",
         "Fantastic! You have successfully completed your chat session with Lucas."
       ],
@@ -522,36 +505,6 @@
           feed.scrollTop = feed.scrollHeight;
         }, 800);
       }
-    }
-
-    // Official YouTube Song Player for 40-Second Streams
-    let songTimer = null;
-
-    function playOfficialSong(songName, ytVideoId) {
-      if (songTimer) clearInterval(songTimer);
-
-      const display = document.getElementById('songTimerDisplay');
-      const container = document.getElementById('youtubePlayerContainer');
-      
-      display.innerText = `🎵 Loading exact track "${songName}"...`;
-      container.style.display = 'block';
-      container.innerHTML = `<iframe width="100%" height="90" src="https://www.youtube.com/embed/${ytVideoId}?autoplay=1" title="${songName}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border-radius: 6px;"></iframe>`;
-
-      let secondsRemaining = 40;
-      display.innerText = `🎵 Streaming "${songName}" — 00:40 remaining`;
-
-      songTimer = setInterval(() => {
-        secondsRemaining--;
-        let secsStr = secondsRemaining < 10 ? '0' + secondsRemaining : secondsRemaining;
-        display.innerText = `🎵 Streaming "${songName}" — 00:${secsStr} remaining`;
-
-        if (secondsRemaining <= 0) {
-          clearInterval(songTimer);
-          container.innerHTML = '';
-          container.style.display = 'none';
-          display.innerText = `✅ 40-Second Stream Completed for "${songName}"! Reward Credited.`;
-        }
-      }, 1000);
     }
 
     // DLS 2026 Player Selection Logic
@@ -653,7 +606,6 @@
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
         audioCtx = new AudioCtx();
         
-        // Create pink/white noise buffer simulating massive stadium crowd murmur & cheers
         const bufferSize = audioCtx.sampleRate * 2;
         const noiseBuffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
         const output = noiseBuffer.getChannelData(0);
@@ -664,7 +616,7 @@
           b0 = 0.99886 * b0 + white * 0.0555179;
           b1 = 0.99332 * b1 + white * 0.0750759;
           b2 = 0.96900 * b2 + white * 0.1538520;
-          output[i] = (b0 + b1 + b2) * 0.11;
+          output[i] = (b0 + b1 + b2) * 0.12;
         }
 
         crowdNoiseNode = audioCtx.createBufferSource();
@@ -677,7 +629,7 @@
         bandpass.Q.value = 1.2;
 
         const gainNode = audioCtx.createGain();
-        gainNode.gain.value = 0.35; // Audible fan roar volume
+        gainNode.gain.value = 0.4;
 
         crowdNoiseNode.connect(bandpass);
         bandpass.connect(gainNode);
