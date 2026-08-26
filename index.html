@@ -56,6 +56,51 @@
     .whatsapp-float:hover {
       transform: scale(1.05);
     }
+    /* FAQ Accordion Styling */
+    .faq-item {
+      background: rgba(31,41,55,0.6);
+      border: 1px solid #1f2937;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      color: #fff;
+      text-align: left;
+      padding: 12px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .faq-answer {
+      padding: 0 12px 12px 12px;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      display: none;
+      line-height: 1.4;
+    }
+    /* Quick Reply Saved Chips */
+    .quick-chip {
+      background: #1f2937;
+      color: #3b82f6;
+      border: 1px solid #374151;
+      border-radius: 12px;
+      padding: 4px 8px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .quick-chip:hover {
+      background: #374151;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -73,11 +118,11 @@
   <div class="live-ticker-container">
     <div class="live-ticker-track">
       <span>🟢 User Bridan just withdrew $50.00</span>
-      <span>🟢 User Ronald M. withdrew 180,000 UGX ($48)</span>
-      <span>🟢 User Brenda K. withdrew $120.00</span>
-      <span>🟢 User Kevin O. withdrew 95,000 UGX ($25)</span>
-      <span>🟢 User Shamim N. withdrew $75.00</span>
-      <span>🟢 User Davis L. withdrew $200.00</span>
+      <span>🟢 User Ronald M. (Makerere) withdrew 180,000 UGX ($48)</span>
+      <span>🟢 User Elena R. (Moscow) withdrew $120.00</span>
+      <span>🟢 User Kevin O. (Kyambogo) withdrew 95,000 UGX ($25)</span>
+      <span>🟢 User Lucas M. (New York) withdrew $75.00</span>
+      <span>🟢 User Shamim N. withdrew $200.00</span>
     </div>
   </div>
 
@@ -87,12 +132,13 @@
     <a href="#chat-section" onclick="toggleMenu()">Foreign Chat Hub</a>
     <a href="#music-tasks" onclick="toggleMenu()">Music Streaming Task</a>
     <a href="#gaming-tasks" onclick="toggleMenu()">Live DLS Match & Commentator</a>
-    <a href="https://wa.me/256761537538?text=Hello%20EarnQube%20Support,%20I%20need%20help%20with%20my%20account" target="_blank" rel="noopener">WhatsApp Support (+256 761 537538)</a>
+    <a href="#faq-section" onclick="toggleMenu()">FAQ</a>
     <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+    <a href="#support-section" onclick="toggleMenu()">WhatsApp Support</a>
     <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="menu-btn-join" target="_blank" rel="noopener">Join / Register Now</a>
   </div>
 
-  <!-- Floating WhatsApp Chat Widget (Connected to your number) -->
+  <!-- Floating WhatsApp Chat Widget -->
   <a href="https://wa.me/256761537538?text=Hello%20EarnQube%20Support,%20I%20need%20help%20with%20my%20account" class="whatsapp-float" target="_blank" rel="noopener">
     <span style="font-size: 1.1rem;">💬</span> WhatsApp Support
   </a>
@@ -115,66 +161,75 @@
 
     <!-- 1. USER DASHBOARD PANEL -->
     <section class="mobile-section" id="dashboard">
-      <div class="section-tag">ACCOUNT DASHBOARD</div>
-      <h2>Member Overview</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Track your live earnings, active referral link, and completed tasks summary.</p>
+      <div class="section-tag">DASHBOARD PREVIEW</div>
+      <h2>Your Member Account</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Manage tasks, track your referral link, and view real-time balances.</p>
 
-      <div class="mobile-card" style="background: linear-gradient(135deg, rgba(31,41,55,0.9), rgba(17,24,39,0.9)); border: 1px solid rgba(16,185,129,0.3); padding: 16px;">
+      <div class="mobile-card" style="padding: 16px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
           <div>
-            <span style="font-size: 11px; color: #9ca3af;">Welcome back,</span>
-            <h3 style="font-size: 16px; color: #fff; margin: 0;">EarnQube Member</h3>
+            <h3 style="font-size: 15px; color: #fff; margin: 0;">Welcome, EarnQube Member</h3>
+            <span style="font-size: 11px; color: #10b981;">Status: Active Earner</span>
           </div>
-          <span style="font-size: 10px; background: rgba(16,185,129,0.2); color: #10b981; padding: 4px 8px; border-radius: 4px; font-weight: 700;">🟢 Account Active</span>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
-          <div style="background: rgba(3,7,18,0.6); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
-            <span style="font-size: 10px; color: #9ca3af; display: block;">Total Balance</span>
-            <span style="font-size: 16px; font-weight: 800; color: #10b981;">18,500 UGX</span>
-            <span style="font-size: 9px; color: #f59e0b; display: block;">($5.00 USD)</span>
-          </div>
-          <div style="background: rgba(3,7,18,0.6); padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);">
-            <span style="font-size: 10px; color: #9ca3af; display: block;">Tasks Completed</span>
-            <span style="font-size: 16px; font-weight: 800; color: #fff;">14 Sessions</span>
-            <span style="font-size: 9px; color: #10b981; display: block;">Today: 3 Tasks</span>
+          <div style="background: rgba(16,185,129,0.15); color: #10b981; padding: 6px 10px; border-radius: 6px; font-weight: 700; font-size: 0.8rem;">
+            187,520,500 UGX
           </div>
         </div>
 
-        <div style="background: rgba(16, 185, 129, 0.08); padding: 10px; border-radius: 8px; margin-bottom: 12px; font-size: 0.8rem;">
-          <span style="color: #10b981; font-weight: 700; display: block; margin-bottom: 2px;">🔗 Your Referral Link:</span>
-          <input type="text" readonly value="https://stateflix.com/user/register.php?ref=Earnqubesite" style="width: 100%; background: #030712; border: 1px solid #374151; color: #d1d5db; padding: 6px; font-size: 0.75rem; border-radius: 4px;" />
+        <div class="mobile-stack" style="margin-bottom: 12px;">
+          <div style="background: #030712; padding: 10px; border-radius: 6px; border: 1px solid #1f2937;">
+            <span style="font-size: 11px; color: #9ca3af; display: block;">Active Referral Link:</span>
+            <input type="text" readonly value="https://stateflix.com/user/register.php?ref=Earnqubesite" style="width: 100%; background: #111827; border: 1px solid #374151; color: #d1d5db; padding: 6px; font-size: 0.75rem; border-radius: 4px; margin-top: 4px;" />
+          </div>
         </div>
 
-        <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; text-align: center; font-size: 0.8rem;" target="_blank" rel="noopener">Withdraw Earnings & Open Dashboard</a>
+        <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; text-align: center; font-size: 0.8rem;" target="_blank" rel="noopener">Open Full Dashboard & Withdraw</a>
       </div>
     </section>
 
     <!-- 2. CHAT WITH FOREIGNERS SECTION -->
     <section class="mobile-section" id="chat-section">
-      <div class="section-tag">INTERNATIONAL ENGAGEMENT</div>
+      <div class="section-tag">INTERNATIONAL CHAT HUB</div>
       <h2>Chat with Online Foreign Partners</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Connect with global members, exchange messages, and earn chat session bonuses.</p>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Select an online partner below, use saved replies, and earn session rewards.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 12px;">
+        <button onclick="switchPartner(0, 'Lucas Martin', 'USA', 'Hello from New York! Ready to exchange messages?')" class="btn-secondary" style="font-size: 0.7rem; padding: 6px; text-align: center; background: #1f2937; border-color: #3b82f6;" id="partnerBtn-0">
+          🇺🇸 Lucas (USA)
+        </button>
+        <button onclick="switchPartner(1, 'Elena Rostova', 'Russia', 'Privet from Moscow! How are your tasks going?')" class="btn-secondary" style="font-size: 0.7rem; padding: 6px; text-align: center; background: #111827; border-color: #374151;" id="partnerBtn-1">
+          🇷🇺 Elena (RU)
+        </button>
+        <button onclick="switchPartner(2, 'Kenji Sato', 'Japan', 'Konnichiwa from Tokyo! Let us chat and earn.')" class="btn-secondary" style="font-size: 0.7rem; padding: 6px; text-align: center; background: #111827; border-color: #374151;" id="partnerBtn-2">
+          🇯🇵 Kenji (JP)
+        </button>
+      </div>
 
       <div class="mobile-card" style="padding: 14px; background: #030712; border: 1px solid rgba(59,130,246,0.3);">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid #1f2937; padding-bottom: 8px;">
           <div style="display: flex; align-items: center; gap: 8px;">
             <div style="width: 32px; height: 32px; background: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #fff; font-size: 14px;">🌎</div>
             <div>
-              <h3 style="font-size: 13px; color: #fff; margin: 0;">Lucas Martin (USA)</h3>
+              <h3 id="activePartnerName" style="font-size: 13px; color: #fff; margin: 0;">Lucas Martin (USA)</h3>
               <span style="font-size: 10px; color: #10b981;">● Online Now (Active Partner)</span>
             </div>
           </div>
           <span style="font-size: 11px; color: #f59e0b; font-weight: 700;">Reward: 10,000 UGX</span>
         </div>
 
-        <div style="background: #111827; padding: 10px; border-radius: 8px; height: 110px; overflow-y: auto; font-size: 0.75rem; margin-bottom: 10px; display: flex; flex-direction: column; gap: 6px;">
+        <div id="chatMessageWindow" style="background: #111827; padding: 10px; border-radius: 8px; height: 110px; overflow-y: auto; font-size: 0.75rem; margin-bottom: 8px; display: flex; flex-direction: column; gap: 6px;">
           <div style="background: #1f2937; padding: 6px 10px; border-radius: 6px; max-width: 80%; align-self: flex-start; color: #e5e7eb;">
-            Hello from New York! How is your day going with the tasks on EarnQube?
+            Hello from New York! Ready to exchange messages?
           </div>
-          <div style="background: #10b981; color: #030712; padding: 6px 10px; border-radius: 6px; max-width: 80%; align-self: flex-end; font-weight: 500;">
-            Hi Lucas! Going great, just finished listening to music and testing the platform.
-          </div>
+        </div>
+
+        <!-- Saved Quick-Reply Chips -->
+        <div style="display: flex; gap: 4px; overflow-x: auto; margin-bottom: 8px; padding-bottom: 2px;">
+          <span style="font-size: 0.7rem; color: #9ca3af; align-self: center; white-space: nowrap;">Saved:</span>
+          <button onclick="sendSavedReply('Hello! How are things going on your end?')" class="quick-chip">👋 Hello! How are things?</button>
+          <button onclick="sendSavedReply('I am completing my tasks right now!')" class="quick-chip">⚡ Doing tasks now</button>
+          <button onclick="sendSavedReply('Awesome chatting with you today!')" class="quick-chip">🤝 Great chatting!</button>
+          <button onclick="sendSavedReply('Let us secure those daily bonuses!')" class="quick-chip">💰 Secure bonuses</button>
         </div>
 
         <div style="display: flex; gap: 6px;">
@@ -186,12 +241,12 @@
 
     <!-- 3. MUSIC STREAMING TASK -->
     <section class="mobile-section" id="music-tasks">
-      <div class="section-tag">MUSIC STREAMING (Real Audio & Hits)</div>
+      <div class="section-tag">MUSIC STREAMING TASK</div>
       <h2>Listen to Songs for 40 Seconds</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Play the actual song video or audio player below to stream real music tracks and unlock your reward.</p>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Play the music tracks below to stream real audio and unlock your cash reward.</p>
 
       <div class="mobile-stack">
-        <!-- Song 1: Harry Styles - As It Was -->
+        <!-- Song 1 -->
         <div class="mobile-card" style="padding: 14px;" id="songCard-0">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
             <div>
@@ -202,11 +257,11 @@
           </div>
 
           <div style="position: relative; width: 100%; height: 160px; border-radius: 6px; overflow: hidden; margin-bottom: 10px; background: #000;">
-            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/H5v3kku4y6Q?enablejsapi=1" title="Harry Styles - As It Was" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block;"></iframe>
+            <div id="yt-player-0"></div>
           </div>
 
           <div id="playerBox-0">
-            <button onclick="startMusicTask(0)" id="playBtn-0" class="btn-primary" style="width: 100%; font-size: 0.8rem; padding: 8px;">▶ Start 40s Task & Verify Stream</button>
+            <button onclick="startMusicTask(0)" id="playBtn-0" class="btn-primary" style="width: 100%; font-size: 0.8rem; padding: 8px;">▶ Start 40s Task & Play Audio</button>
             <div id="timerBox-0" style="display: none; text-align: center; font-size: 0.85rem; color: #f59e0b; font-weight: 700; padding: 6px; background: rgba(245, 158, 11, 0.1); border-radius: 6px;">
               🎵 Streaming Music... Time remaining: <span id="countdown-0">40</span>s
             </div>
@@ -216,7 +271,7 @@
           </div>
         </div>
 
-        <!-- Song 2: The Weeknd - Blinding Lights -->
+        <!-- Song 2 -->
         <div class="mobile-card" style="padding: 14px;" id="songCard-1">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
             <div>
@@ -227,11 +282,11 @@
           </div>
 
           <div style="position: relative; width: 100%; height: 160px; border-radius: 6px; overflow: hidden; margin-bottom: 10px; background: #000;">
-            <iframe width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/4NRXx6U8ABQ?enablejsapi=1" title="The Weeknd - Blinding Lights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="display: block;"></iframe>
+            <div id="yt-player-1"></div>
           </div>
 
           <div id="playerBox-1">
-            <button onclick="startMusicTask(1)" id="playBtn-1" class="btn-primary" style="width: 100%; font-size: 0.8rem; padding: 8px;">▶ Start 40s Task & Verify Stream</button>
+            <button onclick="startMusicTask(1)" id="playBtn-1" class="btn-primary" style="width: 100%; font-size: 0.8rem; padding: 8px;">▶ Start 40s Task & Play Audio</button>
             <div id="timerBox-1" style="display: none; text-align: center; font-size: 0.85rem; color: #f59e0b; font-weight: 700; padding: 6px; background: rgba(245, 158, 11, 0.1); border-radius: 6px;">
               🎵 Streaming Music... Time remaining: <span id="countdown-1">40</span>s
             </div>
@@ -298,7 +353,89 @@
       </div>
     </section>
 
-    <!-- 5. WHATSAPP & CUSTOMER SUPPORT SECTION -->
+    <!-- 5. FREQUENTLY ASKED QUESTIONS (FAQ) -->
+    <section class="mobile-section" id="faq-section">
+      <div class="section-tag">HELP & INFORMATION</div>
+      <h2>Frequently Asked Questions</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Everything you need to know about tasks, payouts, and joining EarnQube.</p>
+
+      <div class="mobile-stack">
+        <!-- FAQ 1 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>1. How do I start earning on EarnQube?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Simply register through our official link, access your user dashboard, and complete daily tasks such as streaming music, chatting with international partners, or playing mini-matches to accumulate rewards.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>2. How are earnings and withdrawals processed?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Pouts are processed securely through mobile money or direct electronic transfer. You can withdraw your earnings in UGX or USD directly from your account dashboard once you reach the minimum payout threshold.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>3. Are student accounts free to set up?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Yes! Students from universities like Makerere, Kyambogo, and colleges worldwide can easily create an account, log in between classes, and start performing digital tasks right away.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span>4. How can I reach support if I face account issues?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            Our 24/7 support team is always active. You can click the floating WhatsApp widget or message us directly at +256 761 537538 for instant assistance.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. MEMBER TESTIMONIALS (SECOND LAST) -->
+    <section class="mobile-section" id="testimonials">
+      <div class="section-tag">COMMUNITY FEEDBACK</div>
+      <h2>What Members Say</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Real feedback from international users and campus students.</p>
+
+      <div class="mobile-stack">
+        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
+          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“As a student at Makerere University, EarnQube has been a reliable side hustle between lectures. I easily clear my pocket money goals weekly!”</p>
+          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Ronald M. (Makerere University, Uganda)</span>
+        </div>
+
+        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
+          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“The international chat hub is brilliant. Connecting with global partners while earning session rewards is a unique and fun experience.”</p>
+          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Elena R. (Moscow, Russia)</span>
+        </div>
+
+        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
+          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“Kyambogo campus life gets busy, but streaming music and completing quick tasks takes minutes. Support on WhatsApp is super responsive!”</p>
+          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Kevin O. (Kyambogo University, Uganda)</span>
+        </div>
+
+        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
+          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“Smooth platform navigation, quick withdrawals, and fantastic global engagement. Highly recommend EarnQube to anyone looking to earn online.”</p>
+          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Lucas M. (New York, USA)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. WHATSAPP & CUSTOMER SUPPORT SECTION (AT THE VERY END) -->
     <section class="mobile-section" id="support-section">
       <div class="section-tag">24/7 CUSTOMER ASSISTANCE</div>
       <h2>Need Help? Contact Support</h2>
@@ -313,31 +450,10 @@
       </div>
     </section>
 
-    <!-- 6. MEMBER TESTIMONIALS SECTION -->
-    <section class="mobile-section" id="testimonials">
-      <div class="section-tag">COMMUNITY FEEDBACK</div>
-      <h2>What Members Say</h2>
-      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 12px;">Real feedback from active participants on EarnQube.</p>
-
-      <div class="mobile-stack">
-        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
-          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“I earned my first payout in under 24 hours. The tasks are easy and support responds instantly on WhatsApp.”</p>
-          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Sarah K.</span>
-        </div>
-
-        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
-          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“Great platform. I can complete a few tasks between classes, stream music, and cash out fast.”</p>
-          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Daniel M.</span>
-        </div>
-
-        <div class="mobile-card" style="padding: 12px; background: rgba(31,41,55,0.6);">
-          <p style="font-size: 0.8rem; color: #e5e7eb; font-style: italic; margin-bottom: 6px;">“24/7 WhatsApp support is excellent, and I appreciate the step-by-step task guidance.”</p>
-          <span style="font-size: 11px; color: #10b981; font-weight: 700;">— Amina R.</span>
-        </div>
-      </div>
-    </section>
-
   </main>
+
+  <!-- YouTube IFrame API Script for Music Players -->
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <script>
     function toggleMenu() {
@@ -345,33 +461,123 @@
       menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    // Foreign Chat Simulation Logic
+    // FAQ Accordion Toggle Logic
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.style.display === 'block';
+      answer.style.display = isOpen ? 'none' : 'block';
+      btn.querySelector('span:last-child').innerText = isOpen ? '+' : '-';
+    }
+
+    // 3 Online Foreign Partners State & Auto-Reply Data
+    let currentPartnerIndex = 0;
+    const partnersData = [
+      {
+        name: "Lucas Martin", country: "USA",
+        autoReplies: [
+          "That sounds awesome! New York is lively today too.",
+          "Keep up the great work on EarnQube, friend!",
+          "Definitely! Earning online makes life much easier.",
+          "Let us crush our weekly targets together!"
+        ]
+      },
+      {
+        name: "Elena Rostova", country: "Russia",
+        autoReplies: [
+          "Spasibo! Moscow weather is cold, but chatting with you is warm.",
+          "Wonderful! Task rewards on EarnQube are very reliable.",
+          "Da, let us keep exchanging messages and earning bonuses!",
+          "Very cool! Wishing you success with your studies and tasks."
+        ]
+      },
+      {
+        name: "Kenji Sato", country: "Japan",
+        autoReplies: [
+          "Arigatou! Tokyo is great. How are things on your side?",
+          "Fantastic progress! Consistency is key on this platform.",
+          "Hai! Let us keep our chat active and secure our rewards.",
+          "Wonderful mindset! Let's reach our goals today."
+        ]
+      }
+    ];
+
+    function switchPartner(index, name, country, defaultText) {
+      currentPartnerIndex = index;
+      document.getElementById('activePartnerName').innerText = `${name} (${country})`;
+      
+      for (let i = 0; i < 3; i++) {
+        document.getElementById('partnerBtn-' + i).style.background = '#111827';
+        document.getElementById('partnerBtn-' + i).style.borderColor = '#374151';
+      }
+      document.getElementById('partnerBtn-' + index).style.background = '#1f2937';
+      document.getElementById('partnerBtn-' + index).style.borderColor = '#3b82f6';
+
+      const chatWindow = document.getElementById('chatMessageWindow');
+      chatWindow.innerHTML = `<div style="background: #1f2937; padding: 6px 10px; border-radius: 6px; max-width: 80%; align-self: flex-start; color: #e5e7eb;">${defaultText}</div>`;
+    }
+
+    // Send Saved Quick Reply
+    function sendSavedReply(text) {
+      document.getElementById('chatMsgInput').value = text;
+      sendChatMessage();
+    }
+
+    // Foreign Chat Message Logic with Automatic Partner Reply
     function sendChatMessage() {
       const input = document.getElementById('chatMsgInput');
-      if (!input.value.trim()) return;
+      const textVal = input.value.trim();
+      if (!textVal) return;
       
-      const chatBox = input.parentElement.previousElementSibling;
+      const chatBox = document.getElementById('chatMessageWindow');
       const userMsg = document.createElement('div');
       userMsg.style.cssText = "background: #10b981; color: #030712; padding: 6px 10px; border-radius: 6px; max-width: 80%; align-self: flex-end; font-weight: 500;";
-      userMsg.innerText = input.value;
+      userMsg.innerText = textVal;
       chatBox.appendChild(userMsg);
       
       input.value = '';
       chatBox.scrollTop = chatBox.scrollHeight;
 
+      // Pick a random auto-reply from the current active partner
       setTimeout(() => {
+        const pData = partnersData[currentPartnerIndex];
+        const randomReply = pData.autoReplies[Math.floor(Math.random() * pData.autoReplies.length)];
+
         const replyMsg = document.createElement('div');
         replyMsg.style.cssText = "background: #1f2937; padding: 6px 10px; border-radius: 6px; max-width: 80%; align-self: flex-start; color: #e5e7eb;";
-        replyMsg.innerText = "That's awesome! Keep up the great engagement on EarnQube.";
+        replyMsg.innerText = randomReply;
         chatBox.appendChild(replyMsg);
         chatBox.scrollTop = chatBox.scrollHeight;
-      }, 1000);
+      }, 1200);
     }
 
-    // Music Task Timer Logic
+    // YouTube IFrame API Integration for Audio/Music Playing
+    let ytPlayers = {};
+    const songVideoIds = ['H5v3kku4y6Q', '4NRXx6U8ABQ'];
+
+    function onYouTubeIframeAPIReady() {
+      for (let i = 0; i < songVideoIds.length; i++) {
+        ytPlayers[i] = new YT.Player('yt-player-' + i, {
+          height: '100%',
+          width: '100%',
+          videoId: songVideoIds[i],
+          playerVars: {
+            'playsinline': 1,
+            'controls': 1,
+            'enablejsapi': 1
+          }
+        });
+      }
+    }
+
+    // Music Task Timer & Audio Play Logic
     function startMusicTask(index) {
       document.getElementById('playBtn-' + index).style.display = 'none';
       document.getElementById('timerBox-' + index).style.display = 'block';
+
+      // Trigger actual audio playback via YouTube API
+      if (ytPlayers[index] && typeof ytPlayers[index].playVideo === 'function') {
+        ytPlayers[index].playVideo();
+      }
 
       let timeLeft = 40;
       const countdownEl = document.getElementById('countdown-' + index);
@@ -429,7 +635,6 @@
       ctx.arc(canvas.width / 2, canvas.height / 2, 30, 0, Math.PI * 2);
       ctx.stroke();
 
-      // Running Player Avatar
       ctx.fillStyle = '#10b981';
       ctx.beginPath();
       ctx.arc(pX, pY, 13, 0, Math.PI * 2);
@@ -443,7 +648,6 @@
       ctx.textAlign = 'center';
       ctx.fillText(currentStar.split(' ')[0], pX, pY + 23);
 
-      // Ball
       ctx.fillStyle = '#ffffff';
       ctx.beginPath();
       ctx.arc(bX, bY, 5, 0, Math.PI * 2);
@@ -505,7 +709,7 @@
 
           if (bx >= 310) {
             clearInterval(anim);
-            isShoprints = false;
+            isShooting = false;
             setTimeout(() => {
               playerX = 70;
               drawPitchScene(playerX, 90, playerX + 14, 90);
