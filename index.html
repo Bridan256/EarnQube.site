@@ -2,415 +2,207 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EarnQube.site | Earn cash from simple online tasks</title>
-  <meta name="description" content="EarnQube.site helps you earn real money online from videos, offers, surveys, and chat tasks. Start today with easy daily payouts and 24/7 support." />
-  <meta name="theme-color" content="#030712" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="apple-touch-icon" href="favicon.svg" />
-  <link rel="canonical" href="https://earnqube.site/" />
-
-  <meta property="og:title" content="EarnQube.site | Earn cash by chatting with lonely foreigners and other tasks like watching YouTube and TikTok videos" />
-  <meta property="og:description" content="EarnQube.site helps you earn real money from videos, offers, surveys, and chat tasks." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://earnqube.site/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=1200&q=80" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EarnQube.site | Earn cash by chatting with lonely foreigners and other tasks like watching YouTube and TikTok videos" />
-  <meta name="twitter:description" content="EarnQube.site helps you earn real money from videos, offers, surveys, and chat tasks." />
-  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=1200&q=80" />
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>EarnQube.site | Mobile Earning Platform</title>
   <link rel="stylesheet" href="styles.css" />
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://earnqube.site/",
-    "name": "EarnQube.site",
-    "description": "A fast, mobile-friendly paying platform for earning from videos, offers, chats, and surveys."
-  }
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- Navbar -->
-  <header class="navbar">
+  <!-- Mobile Top Navigation Bar -->
+  <header class="mobile-navbar">
     <div class="logo">Earn<span>Qube</span></div>
-    <nav class="nav-links">
-      <a href="#how-to-earn">How to Earn</a>
-      <a href="#demo-section">Live Demo</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <div class="nav-buttons">
-      <a href="https://stateflix.com/user/login.php" class="btn-signin" target="_blank" rel="noopener">Sign In</a>
-      <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-join" target="_blank" rel="noopener">Join Now</a>
+    <div class="mobile-nav-right">
+      <a href="https://stateflix.com/user/login.php" class="nav-icon-btn" target="_blank" rel="noopener">&#128100;</a>
+      <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero-section" id="hero">
-      <div class="hero-container">
-        <!-- Left Text Content -->
-        <div class="hero-text">
-          <div class="badge">
-            <span class="dot-indicator"></span> Make Money Online
-          </div>
-          <h1>Turn everyday actions into <span class="green-text">real money.</span></h1>
-          <p>Earn money by completing simple online tasks, watching videos, chatting and more from the comfort of your home.</p>
-          <div class="hero-actions">
-            <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" target="_blank" rel="noopener">Create Account &rarr;</a>
-            <a href="https://stateflix.com/user/login.php" class="btn-secondary" target="_blank" rel="noopener">Member Login &nbsp;&#128100;</a>
-          </div>
-        </div>
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobileMenu" class="mobile-dropdown">
+    <a href="#interactive-chat" onclick="toggleMenu()">Foreigner Chat Task</a>
+    <a href="#how-to-earn" onclick="toggleMenu()">Ways to Earn</a>
+    <a href="#testimonials" onclick="toggleMenu()">Testimonials</a>
+    <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="menu-btn-join" target="_blank" rel="noopener">Join Now / Register</a>
+  </div>
 
-        <!-- Right Phone Mockup Dashboard -->
-        <div class="hero-mockup" aria-hidden="true">
-          <div class="phone-frame">
-            <div class="phone-screen">
-              <div class="phone-header">
-                <div class="user-info">
-                  <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100" alt="Avatar">
-                  <div>
-                    <small>Welcome back,</small>
-                    <strong>EarnQube Member</strong>
-                  </div>
-                </div>
-                <div class="notification-icon">&#128276;</div>
-              </div>
-              <div class="balance-card">
-                <small>Available Balance</small>
-                <h2>$520.25</h2>
-                <div class="total-earnings">Total Earnings <span>$1,620.50</span></div>
-              </div>
-              <div class="quick-actions-title">Quick Actions</div>
-              <div class="quick-actions-grid">
-                <div class="q-action-btn">&#9658;<br><span>Watch Videos</span></div>
-                <div class="q-action-btn">&#128196;<br><span>Other Tasks</span></div>
-                <div class="q-action-btn">&#128172;<br><span>Chat & Engage</span></div>
-              </div>
-              <div class="recent-earnings-box">
-                <div class="re-left">&#9658; <div><strong>Watch Video</strong><small>2 mins ago</small></div></div>
-                <div class="re-right">+ $2.50</div>
-              </div>
+  <!-- Main Mobile Container -->
+  <main class="mobile-container">
+
+    <!-- Hero Section -->
+    <section class="mobile-hero">
+      <div class="badge">
+        <span class="dot-indicator"></span> Make Money Online Daily
+      </div>
+      <h1>Turn everyday actions into <span class="green-text">real money.</span></h1>
+      <p>Chat with foreign partners, complete 5 messages, and claim your cash payout instantly.</p>
+      
+      <div class="hero-buttons">
+        <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" target="_blank" rel="noopener">Create Account & Activate</a>
+        <a href="https://stateflix.com/user/login.php" class="btn-secondary" target="_blank" rel="noopener">Member Login</a>
+      </div>
+    </section>
+
+    <!-- Interactive 5-Message Foreigner Chat Task Section -->
+    <section class="mobile-section" id="interactive-chat">
+      <div class="section-tag">LIVE TASK SIMULATION</div>
+      <h2>Chat with Foreign Partner</h2>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 15px;">Complete 5 messages with Jessica to unlock your $3.00 payout.</p>
+
+      <div class="mobile-card" style="padding: 12px;">
+        <!-- Partner Header & Counter -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 8px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Jessica" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;">
+            <div>
+              <strong style="font-size: 13px; color: #fff; display: block;">Jessica, 24 (New York) <span style="color: #10b981; font-size: 10px;">● Online</span></strong>
+              <small style="color: #9ca3af; font-size: 10px;">Reward: $3.00 (10,000 UGX)</small>
             </div>
           </div>
+          <div style="background: rgba(16,185,129,0.1); color: #10b981; padding: 4px 8px; border-radius: 6px; font-size: 0.75srem; font-weight: 700;">
+            <span id="msgCount">0</span>/5 Msgs
+          </div>
         </div>
-      </div>
 
-      <!-- Trust Stats Bar -->
-      <div class="stats-bar">
-        <div class="stat-card">
-          <div class="stat-icon">&#128101;</div>
-          <div><h3>50M+</h3><p>Active Members</p></div>
+        <!-- Chat Feed -->
+        <div id="chatFeed" style="height: 180px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; font-size: 0.8rem; padding-right: 4px;">
+          <div style="background: var(--bg-accent); padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start; color: #fff;">
+            Hi there! Let's chat for a bit so you can complete your daily task. How is your day going? 😊
+          </div>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon">&#128196;</div>
-          <div><h3>500+</h3><p>Tasks Available</p></div>
+
+        <!-- Chat Input Form -->
+        <div id="chatInputArea" style="display: flex; gap: 6px;">
+          <input type="text" id="chatInput" placeholder="Type your reply..." oninput="autoSaveDraft(this.value)" style="flex: 1; background: var(--bg-accent); border: 1px solid rgba(255,255,255,0.1); padding: 10px; border-radius: 8px; color: #fff; font-size: 0.85rem; outline: none;" />
+          <button onclick="sendChatMessage()" style="background: var(--color-primary); color: #030712; border: none; padding: 0 14px; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.85rem;">Send</button>
         </div>
-        <div class="stat-card">
-          <div class="stat-icon">&#127911;</div>
-          <div><h3>24/7</h3><p>Support</p></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-icon">&#128737;</div>
-          <div><h3>100%</h3><p>Secure & Trusted</p></div>
+
+        <!-- Claim Box (Hidden Initially) -->
+        <div id="claimBox" style="display: none; text-align: center; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.3); padding: 15px; border-radius: 10px; margin-top: 10px;">
+          <div style="font-size: 24px; margin-bottom: 5px;">🎉</div>
+          <h3 style="font-size: 15px; color: #fff; margin-bottom: 4px;">Task Completed Successfully!</h3>
+          <p style="font-size: 0.8rem; color: #9ca3af; margin-bottom: 12px;">You've earned <strong>$3.00</strong> from this chat session.</p>
+          <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="btn-primary" style="display: block; text-align: center; font-size: 0.85rem;" target="_blank" rel="noopener">Claim $3.00 & Create Account</a>
         </div>
       </div>
     </section>
 
     <!-- Ways to Earn Section -->
-    <section class="ways-section" id="how-to-earn">
+    <section class="mobile-section" id="how-to-earn">
       <div class="section-tag">WAYS TO EARN</div>
-      <h2>Multiple ways to make money</h2>
-      <p class="section-subtitle">Choose what works best for you and start earning today.</p>
+      <h2>Other simple tasks</h2>
 
-      <div class="ways-grid">
-        <div class="way-card">
-          <div class="way-icon red-bg">&#9658;</div>
-          <h3>Watch Videos</h3>
-          <p>Earn $2 or 5,000 UGX per video by watching YouTube clips, trending content and short ads.</p>
-        </div>
-        <div class="way-card">
-          <div class="way-icon dark-bg">&#128241;</div>
-          <h3>Other Tasks</h3>
-          <p>Complete high-value tasks such as offers, surveys, and app downloads for 10,000 UGX each.</p>
-        </div>
-        <div class="way-card">
-          <div class="way-icon blue-bg">&#128172;</div>
-          <h3>Chat & Engage</h3>
-          <p>Chat with foreign partners and earn $3 or 10,000 UGX per chat session.</p>
-        </div>
-        <div class="way-card">
-          <div class="way-icon green-bg">&#128197;</div>
-          <h3>Surveys & Offers</h3>
-          <p>Share your opinions and complete offers to earn instant money.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Live Demo Section -->
-    <section class="section-padding" id="demo-section" style="background: rgba(11, 15, 25, 0.4);">
-      <div class="section-tag center-text">LIVE PLATFORM PREVIEW</div>
-      <h2 class="center-text">Try live tasks right now</h2>
-      <p class="section-subtitle center-text">Test our real-time chat and music tasks below and claim your earnings!</p>
-
-      <div class="demo-container" style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-        
-        <!-- Real Chat Partners Demo Box -->
-        <div class="way-card">
-          <div class="way-icon blue-bg">&#128172;</div>
-          <h3>Chat with Online Partners</h3>
-          <p style="margin-bottom: 20px;">Engage with active global partners and earn $3.00 (10,000 UGX) per chat session.</p>
-          
-          <div class="demo-list" style="display: flex; flex-direction: column; gap: 10px;">
-            <div class="demo-row" style="background: #1e293b; padding: 12px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Jessica" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">
-                <div>
-                  <strong style="font-size: 13px; display: block;">Jessica, 24 <span style="color: #10b981; font-size: 10px;">● Online</span></strong>
-                  <small style="color: #9ca3af; font-size: 11px;">New York, USA • Payout: $3.00</small>
-                </div>
-              </div>
-              <button onclick="triggerActivation('Chat session with Jessica (USA)', '$3.00 (10,000 UGX)')" style="background: #10b981; color: #030712; border: none; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer;">Start Chat</button>
-            </div>
-
-            <div class="demo-row" style="background: #1e293b; padding: 12px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100" alt="Chloe" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">
-                <div>
-                  <strong style="font-size: 13px; display: block;">Chloe, 26 <span style="color: #10b981; font-size: 10px;">● Online</span></strong>
-                  <small style="color: #9ca3af; font-size: 11px;">London, UK • Payout: $3.00</small>
-                </div>
-              </div>
-              <button onclick="triggerActivation('Chat session with Chloe (UK)', '$3.00 (10,000 UGX)')" style="background: #10b981; color: #030712; border: none; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer;">Start Chat</button>
-            </div>
+      <div class="mobile-stack">
+        <div class="mobile-card">
+          <div class="card-icon red-bg">&#9658;</div>
+          <div class="card-content">
+            <h3>Watch Videos</h3>
+            <p>Earn cash rewards per video clip watched.</p>
+            <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" class="task-action-btn" target="_blank" rel="noopener">Start Task</a>
           </div>
         </div>
-
-        <!-- Real Music Streaming Demo Box -->
-        <div class="way-card">
-          <div class="way-icon red-bg">&#127911;</div>
-          <h3>Listen to Promo Songs</h3>
-          <p style="margin-bottom: 20px;">Stream real sample tracks and earn $1.50 (5,000 UGX) per completed song.</p>
-          
-          <div class="demo-list" style="display: flex; flex-direction: column; gap: 10px;" id="music-list">
-            
-            <!-- Song 1 -->
-            <div class="demo-row" style="background: #1e293b; padding: 10px 12px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <button onclick="toggleAudio(this, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')" style="background: #3b82f6; color: #fff; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 12px; display: flex; align-items: center; justify-content: center;">&#9658;</button>
-                <div>
-                  <strong style="font-size: 13px; display: block;">Acoustic Breeze (Demo)</strong>
-                  <small style="color: #9ca3af; font-size: 11px;">Reward: $1.50 (5,000 UGX)</small>
-                </div>
-              </div>
-              <button onclick="triggerActivation('Acoustic Breeze song reward', '$1.50 (5,000 UGX)')" style="background: #10b981; color: #030712; border: none; padding: 6px 10px; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer;">Claim Cash</button>
-            </div>
-
-            <!-- Song 2 -->
-            <div class="demo-row" style="background: #1e293b; padding: 10px 12px; border-radius: 10px; display: flex; justify-content: space-between; align-items: center;">
-              <div style="display: flex; align-items: center; gap: 10px;">
-                <button onclick="toggleAudio(this, 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')" style="background: #3b82f6; color: #fff; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; font-size: 12px; display: flex; align-items: center; justify-content: center;">&#9658;</button>
-                <div>
-                  <strong style="font-size: 13px; display: block;">Electronic Chillout (Demo)</strong>
-                  <small style="color: #9ca3af; font-size: 11px;">Reward: $1.50 (5,000 UGX)</small>
-                </div>
-              </div>
-              <button onclick="triggerActivation('Electronic Chillout song reward', '$1.50 (5,000 UGX)')" style="background: #10b981; color: #030712; border: none; padding: 6px 10px; border-radius: 6px; font-weight: 700; font-size: 11px; cursor: pointer;">Claim Cash</button>
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="section-padding" id="testimonials">
-      <div class="section-tag center-text">TESTIMONIALS</div>
-      <h2 class="center-text">Loved by users worldwide & students in Uganda</h2>
-      <p class="section-subtitle center-text">See what international partners and local university students have to say about earning on EarnQube.</p>
-      
-      <div class="ways-grid" style="margin-top: 30px;">
-        
-        <!-- Testimonial 1 -->
-        <div class="way-card">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100" alt="Ronald M." style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
+    <section class="mobile-section" id="testimonials">
+      <div class="section-tag">TESTIMONIALS</div>
+      <h2>Loved by users</h2>
+
+      <div class="mobile-stack">
+        <div class="mobile-card">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100" alt="Ronald" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">
             <div>
-              <strong style="color: #fff; font-size: 14px; display: block;">Ronald M.</strong>
-              <small style="color: #10b981;">Makerere University, Uganda</small>
+              <strong style="font-size: 13px; color: #fff;">Ronald M.</strong>
+              <small style="color: #10b981; display: block; font-size: 11px;">Makerere University, Uganda</small>
             </div>
           </div>
-          <p style="color: #d1d5db; font-size: 14px; line-height: 1.5;">"As a university student in Kampala, doing the chat and video tasks between lectures has been a total game-changer. Payouts arrive smoothly!"</p>
-        </div>
-
-        <!-- Testimonial 2 -->
-        <div class="way-card">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100" alt="Jessica L." style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
-            <div>
-              <strong style="color: #fff; font-size: 14px; display: block;">Jessica L.</strong>
-              <small style="color: #3b82f6;">New York, United States</small>
-            </div>
-          </div>
-          <p style="color: #d1d5db; font-size: 14px; line-height: 1.5;">"Connecting with users on EarnQube for chat sessions is wonderful. It's an active platform with real engagement and prompt rewards."</p>
-        </div>
-
-        <!-- Testimonial 3 -->
-        <div class="way-card">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Gift A." style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
-            <div>
-              <strong style="color: #fff; font-size: 14px; display: block;">Gift A.</strong>
-              <small style="color: #10b981;">Kyambogo University, Uganda</small>
-            </div>
-          </div>
-          <p style="color: #d1d5db; font-size: 14px; line-height: 1.5;">"I make good pocket money daily just listening to music tracks and completing simple offers. Highly recommend it to all campus students!"</p>
-        </div>
-
-        <!-- Testimonial 4 -->
-        <div class="way-card">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100" alt="Marcus B." style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover;">
-            <div>
-              <strong style="color: #fff; font-size: 14px; display: block;">Marcus B.</strong>
-              <small style="color: #3b82f6;">London, United Kingdom</small>
-            </div>
-          </div>
-          <p style="color: #d1d5db; font-size: 14px; line-height: 1.5;">"A very straightforward platform. The international chat tasks pay out nicely and the community support is top-notch."</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="steps-section" id="how-it-works">
-      <div class="section-tag">HOW IT WORKS</div>
-      <h2>Simple steps to start earning</h2>
-
-      <div class="steps-grid">
-        <div class="step-card">
-          <div class="step-number">01</div>
-          <div class="step-icon">&#128100;</div>
-          <h3>Create Account</h3>
-          <p>Sign up in less than a minute.</p>
-        </div>
-        <div class="step-arrow">&rarr;</div>
-        <div class="step-card">
-          <div class="step-number">02</div>
-          <div class="step-icon">&#128196;</div>
-          <h3>Choose a Task</h3>
-          <p>Browse available tasks and select what you want to do.</p>
-        </div>
-        <div class="step-arrow">&rarr;</div>
-        <div class="step-card">
-          <div class="step-number">03</div>
-          <div class="step-icon">&#9658;</div>
-          <h3>Complete the Task</h3>
-          <p>Follow the instructions and complete the task correctly.</p>
-        </div>
-        <div class="step-arrow">&rarr;</div>
-        <div class="step-card">
-          <div class="step-number">04</div>
-          <div class="step-icon">&#128187;</div>
-          <h3>Get Paid</h3>
-          <p>Receive your money directly to your account balance.</p>
+          <p style="font-size: 13px; color: #d1d5db; margin: 0;">"The foreigner chat task is so smooth and rewarding!"</p>
         </div>
       </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section class="section-padding" id="faq">
-      <div class="section-tag center-text">FAQ</div>
-      <h2 class="center-text">Frequently asked questions</h2>
-      <div class="faq-container">
-        <div class="faq-item">
-          <h3>How fast can I withdraw earnings?</h3>
-          <p>Most members can request payouts daily after completing tasks. Withdrawal options are clear in your account dashboard.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What payment methods are supported?</h3>
-          <p>EarnQube.site supports popular payment channels and mobile money wallets. Check the payout page for your preferred option.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Is there any signup fee?</h3>
-          <p>No. Creating an account is free, and the platform is built to help you earn from simple digital tasks.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section-padding" id="contact">
-      <div class="contact-box">
-        <h2>Need help or support?</h2>
-        <p>Our support team is available 24/7 to assist with account setup, task guidance, and payment questions.</p>
-        <p class="contact-details"><strong>WhatsApp:</strong> +256 761537538 &nbsp;|&nbsp; <strong>Email:</strong> earnqubesite@gmail.com</p>
-        <div class="hero-actions center-cta">
-          <a class="btn-primary" href="https://wa.me/256761537538" target="_blank" rel="noopener">Chat on WhatsApp</a>
-          <a class="btn-secondary" href="mailto:earnqubesite@gmail.com">Send Email</a>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- Global Audio Element & Activation Modal -->
-  <audio id="demoAudioPlayer"></audio>
-
-  <div id="demoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(3, 7, 18, 0.85); backdrop-filter: blur(8px); z-index: 2000; justify-content: center; align-items: center;">
-    <div style="background: #0f172a; border: 1px solid rgba(16, 185, 129, 0.3); padding: 30px; border-radius: 20px; max-width: 400px; width: 90%; text-align: center; box-shadow: 0 25px 50px rgba(0,0,0,0.9);">
-      <div style="font-size: 40px; margin-bottom: 15px;">&#128276;</div>
-      <h3 id="modalTitle" style="font-size: 20px; margin-bottom: 10px; color: #fff;">Claim Reward</h3>
-      <p id="modalText" style="color: #9ca3af; font-size: 14px; margin-bottom: 25px; line-height: 1.5;">You earned a pending payout! Activate your account now to receive your funds and withdraw daily.</p>
-      <div style="display: flex; flex-direction: column; gap: 10px;">
-        <a href="https://stateflix.com/user/register.php?ref=Earnqubesite" target="_blank" rel="noopener" style="background: #10b981; color: #030712; text-decoration: none; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 14px;">Create Account & Activate</a>
-        <button onclick="closeModal()" style="background: transparent; color: #9ca3af; border: none; padding: 8px; font-size: 13px; cursor: pointer;">Close Preview</button>
-      </div>
-    </div>
-  </div>
-
+  <!-- Script for 5-Message Flow & Auto-Saving -->
   <script>
-    let currentAudio = document.getElementById('demoAudioPlayer');
-    let activePlayButton = null;
+    let messageCount = 0;
 
-    function toggleAudio(btn, url) {
-      if (currentAudio.src === url && !currentAudio.paused) {
-        currentAudio.pause();
-        btn.innerHTML = "&#9658;";
-      } else {
-        if (activePlayButton && activePlayButton !== btn) {
-          activePlayButton.innerHTML = "&#9658;";
-        }
-        currentAudio.src = url;
-        currentAudio.play();
-        btn.innerHTML = "&#10074;&#10074;";
-        activePlayButton = btn;
+    function toggleMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Load auto-saved draft on window load
+    window.onload = function() {
+      const savedDraft = localStorage.getItem('earnqube_chat_draft');
+      if (savedDraft) {
+        document.getElementById('chatInput').value = savedDraft;
       }
+    };
+
+    function autoSaveDraft(text) {
+      localStorage.setItem('earnqube_chat_draft', text);
     }
 
-    function triggerActivation(taskType, amount) {
-      currentAudio.pause();
-      document.getElementById('modalTitle').innerText = "Claim " + amount + "!";
-      document.getElementById('modalText').innerHTML = "You completed: <strong>" + taskType + "</strong>. To receive this cash directly in your account balance and unlock unlimited daily withdrawals, please create an account and activate.";
-      document.getElementById('demoModal').style.display = 'flex';
-    }
+    // Handle 5-message conversation sequence
+    const partnerReplies = [
+      "That sounds really interesting! What else do you like doing online?",
+      "That's cool! I usually spend my time exploring new platforms like EarnQube.",
+      "Indeed! Making money straight from a phone feels incredible.",
+      "We are almost done with our chat target for today. One more reply!",
+      "Awesome! You have completed all 5 messages required for this session."
+    ];
 
-    function closeModal() {
-      document.getElementById('demoModal').style.display = 'none';
+    function sendChatMessage() {
+      const input = document.getElementById('chatInput');
+      const text = input.value.trim();
+      if (!text || messageCount >= 5) return;
+
+      const feed = document.getElementById('chatFeed');
+
+      // Add user message bubble
+      const userBubble = document.createElement('div');
+      userBubble.style.cssText = "background: #10b981; color: #030712; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-end; font-weight: 600;";
+      userBubble.innerText = text;
+      feed.appendChild(userBubble);
+
+      // Clear input and storage draft
+      input.value = '';
+      localStorage.removeItem('earnqube_chat_draft');
+      feed.scrollTop = feed.scrollHeight;
+
+      messageCount++;
+      document.getElementById('msgCount').innerText = messageCount;
+
+      if (messageCount >= 5) {
+        // Hide chat input field and show claim box after final reply
+        setTimeout(() => {
+          const replyBubble = document.createElement('div');
+          replyBubble.style.cssText = "background: var(--bg-accent); color: #fff; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start;";
+          replyBubble.innerText = partnerReplies[4];
+          feed.appendChild(replyBubble);
+          feed.scrollTop = feed.scrollHeight;
+
+          document.getElementById('chatInputArea').style.display = 'none';
+          document.getElementById('claimBox').style.display = 'block';
+        }, 800);
+      } else {
+        // Trigger intermediate partner reply
+        setTimeout(() => {
+          const replyBubble = document.createElement('div');
+          replyBubble.style.cssText = "background: var(--bg-accent); color: #fff; padding: 8px 12px; border-radius: 8px; max-width: 85%; align-self: flex-start;";
+          replyBubble.innerText = partnerReplies[messageCount - 1];
+          feed.appendChild(replyBubble);
+          feed.scrollTop = feed.scrollHeight;
+        }, 800);
+      }
     }
   </script>
 
-  <!-- Footer (Strictly placed last before closing the body) -->
-  <footer class="footer">
+  <!-- Footer Section -->
+  <footer class="mobile-footer">
     <p>&copy; 2026 EarnQube.site. All Rights Reserved.</p>
   </footer>
 
