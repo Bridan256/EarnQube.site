@@ -377,9 +377,94 @@
         <p style="font-size: 0.85rem; color: #9ca3af; margin-bottom: 15px;">Need help with activation, account top-ups, or withdrawals? Reach out via WhatsApp or Email below:</p>
         
         <div style="display: flex; flex-direction: column; gap: 10px;">
-          <!-- WhatsApp Contact Button -->
-          <a href="https://wa.me/256746673971?text=Hello%20EarnQube,%20I%20need%20assistance%20with%20my%20account." class="btn-primary" style="background: #25d366; color: #fff; text-align: center; text-decoration: none; display: block;" target="_blank" rel="noopener">
-            💬 Chat on WhatsApp: +256 746 673 971
+          <!-- Floating WhatsApp Button -->
+<a
+  href="https://wa.me/256746673791?text=Hello%20EarnQube,%20I%20need%20assistance%20with%20my%20account."
+  class="floating-whatsapp"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with EarnQube on WhatsApp"
+>
+  <span class="whatsapp-icon">💬</span>
+  <span class="whatsapp-text">Chat with us</span>
+</a>
+
+<style>
+  .floating-whatsapp {
+    position: fixed;
+    right: 18px;
+    bottom: 20px;
+    z-index: 99999;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 12px 17px;
+    border-radius: 999px;
+
+    background: #25D366;
+    color: #ffffff;
+
+    text-decoration: none;
+    font-family: Inter, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+
+    box-shadow:
+      0 10px 30px rgba(0, 0, 0, 0.35),
+      0 0 25px rgba(37, 211, 102, 0.35);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: whatsappFloat 2.5s ease-in-out infinite;
+  }
+
+  .floating-whatsapp:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow:
+      0 14px 35px rgba(0, 0, 0, 0.4),
+      0 0 35px rgba(37, 211, 102, 0.5);
+  }
+
+  .whatsapp-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+
+    font-size: 17px;
+  }
+
+  @keyframes whatsappFloat {
+    0%, 100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .floating-whatsapp {
+      right: 14px;
+      bottom: 16px;
+      padding: 11px 14px;
+      font-size: 13px;
+    }
+
+    .whatsapp-icon {
+      width: 28px;
+      height: 28px;
+      font-size: 16px;
+    }
+  }
+</style>
           </a>
           
           <!-- Email Contact Button -->
